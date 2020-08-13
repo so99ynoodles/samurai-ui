@@ -6,20 +6,21 @@ import { SamuraiUIButtonProps } from '../../types/Button'
 import { StyledButton } from './styled'
 
 function Button(props: SamuraiUIButtonProps) {
-  const { children, className, elementType = 'button', ...otherProps } = props
+  const {
+    children,
+    className,
+    elementType = 'button',
+    autoFocus,
+    ...otherProps
+  } = props
   const buttonRef = React.useRef<HTMLElement>(null)
-  const { buttonProps, isPressed } = useButton(
-    {
-      ...props,
-    },
-    buttonRef
-  )
+  const { buttonProps, isPressed } = useButton(props, buttonRef)
   const { isHovered, hoverProps } = useHover(props)
 
   return (
     <StyledButton
       {...otherProps}
-      buttonProps={{ ...mergeProps(buttonProps, hoverProps) }}
+      buttonProps={{ ...mergeProps(buttonProps, hoverProps), autoFocus }}
       isPressed={isPressed}
       isHovered={isHovered}
       elementType={elementType}

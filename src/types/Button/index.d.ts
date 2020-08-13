@@ -10,6 +10,8 @@ import { ReactNode, JSXElementConstructor } from 'react'
 export interface SamuraiUIButtonStyleProps extends SamuraiUIPaddingProps {
   borderRadius?: RadiusTypes
   backgroundColor?: SamuraiUIColorTypes
+  fluid?: boolean
+  vivid?: boolean
 }
 
 export interface SamuraiUIButtonProps
@@ -19,4 +21,5 @@ export interface SamuraiUIButtonProps
   children?: ReactNode
   elementType?: string
   type?: 'button' | 'submit' | 'reset'
+  autoFocus?: boolean
 }

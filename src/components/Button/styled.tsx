@@ -7,44 +7,53 @@ import { SamuraiUIInteractionProps } from '../../types/shared'
 
 const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};
-  display: inline-block;
+  display: ${({ fluid }) => (fluid ? 'block' : 'inline-block')};
+  width: ${({ fluid }) => (fluid ? '100%' : undefined)};
   cursor: ${(props) => props.cursor || 'default'};
   padding: ${({ theme }) =>
     `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
   border-radius: ${({ theme, borderRadius }) =>
     borderRadius ? theme.radius[borderRadius] : theme.radius.small};
   border: 1px solid
-    ${({ theme, backgroundColor }) =>
+    ${({ theme, backgroundColor, vivid }) =>
       isSamuraiUIColors(backgroundColor)
-        ? theme.palette[backgroundColor!].dull
+        ? vivid
+          ? theme.palette[backgroundColor!].deep
+          : theme.palette[backgroundColor!].dull
         : theme.colors.border};
   color: ${({ theme, backgroundColor }) =>
     isSamuraiUIColors(backgroundColor)
       ? theme.palette.white
       : theme.typography.colors['text:default']};
-  background-color: ${({ theme, backgroundColor }) =>
+  background-color: ${({ theme, backgroundColor, vivid }) =>
     isSamuraiUIColors(backgroundColor)
-      ? theme.palette[backgroundColor!].light
+      ? vivid
+        ? theme.palette[backgroundColor!].bright
+        : theme.palette[backgroundColor!].light
       : theme.colors.background};
   outline-color: ${({ theme }) => theme.colors.outline};
-    ${({ isHovered, theme, backgroundColor }) =>
+    ${({ isHovered, theme, backgroundColor, vivid }) =>
       isHovered &&
       css`
     color: ${theme.palette.white};
     background-color: ${
       isSamuraiUIColors(backgroundColor)
-        ? theme.palette[backgroundColor!].soft
+        ? vivid
+          ? theme.palette[backgroundColor!].strong
+          : theme.palette[backgroundColor!].soft
         : theme.colors['background:hover']
     };}
     box-shadow: ${theme.shadows.medium};
   `}
-    ${({ isPressed, theme, backgroundColor }) =>
+    ${({ isPressed, theme, backgroundColor, vivid }) =>
       isPressed &&
       css`
     color: ${theme.palette.white};
     background-color: ${
       isSamuraiUIColors(backgroundColor)
-        ? theme.palette[backgroundColor!].dull
+        ? vivid
+          ? theme.palette[backgroundColor!].deep
+          : theme.palette[backgroundColor!].dull
         : theme.colors['background:active']
     };}
   `}

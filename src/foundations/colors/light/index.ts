@@ -4,7 +4,7 @@ import { palette } from '../palette'
 export const lightColors: {
   [key in ThemeColorTypes]: string
 } = {
-  body: palette['gray-300'],
+  body: palette.white,
   background: palette.white,
   'background:hover': palette['gray-400'],
   'background:active': palette['gray-500'],

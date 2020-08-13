@@ -6,9 +6,13 @@ import { isSamuraiUIColors } from '../../utils/resolveColors'
 import { SamuraiUIInteractionProps } from '../../types/shared'
 
 const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
+  font-size: ${({ theme }) => theme.typography.sizes.small};
+  display: inline-block;
+  cursor: ${(props) => props.cursor || 'default'};
   padding: ${({ theme }) =>
     `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
-  border-radius: ${({ theme }) => theme.radius.small};
+  border-radius: ${({ theme, borderRadius }) =>
+    borderRadius ? theme.radius[borderRadius] : theme.radius.small};
   border: 1px solid
     ${({ theme, backgroundColor }) =>
       isSamuraiUIColors(backgroundColor)
@@ -52,11 +56,12 @@ export const StyledButton = styled<
     props: SamuraiUIButtonProps &
       SamuraiUIInteractionProps & { buttonProps: any }
   ) => React.ReactElement<SamuraiUIButtonProps>
->(({ elementType, children, buttonProps, className }) =>
+>(({ elementType, children, buttonProps, className, type }) =>
   React.createElement(
     elementType as string,
     {
       ...buttonProps,
+      type: elementType === 'button' ? type : undefined,
       className,
     },
     children

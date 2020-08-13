@@ -1,6 +1,7 @@
 import {
   AlignSelfProperty,
   Color,
+  CursorProperty,
   DisplayProperty,
   FlexProperty,
   JustifySelfProperty,
@@ -155,4 +156,5 @@ export interface SamuraiUIComponentProps
   visibility?: VisibilityProperty
   className?: string
   boxShadow?: ShadowTypes
+  cursor?: CursorProperty
 }

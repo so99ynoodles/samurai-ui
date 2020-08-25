@@ -1,4 +1,3 @@
-import { BoxShadow } from 'csstype'
 import {
   SizeTypes,
   TypographyColorTypes,
@@ -13,7 +12,7 @@ import {
 export type Theme = {
   palette: PaletteTypes
   shadows: {
-    [key in ShadowTypes]: BoxShadow
+    [key in ShadowTypes]: string
   }
   colors: {
     [key in ThemeColorTypes]: string

@@ -1,13 +1,3 @@
-import {
-  AlignSelfProperty,
-  Color,
-  CursorProperty,
-  DisplayProperty,
-  FlexProperty,
-  JustifySelfProperty,
-  PositionProperty,
-  VisibilityProperty,
-} from 'csstype'
 import { palette } from '../../foundations/colors/palette'
 
 export type PaletteTypes = typeof palette
@@ -66,7 +56,7 @@ export type TypographySizeTypes = 'min' | 'small' | 'medium' | 'large' | 'max'
 
 export type BreakpointTypes = 'mobile' | 'tablet' | 'laptop' | 'desktop'
 
-export type ColorValue = ColorTypes | (string & {})
+export type ColorValue = ThemeColorTypes | (string & {})
 
 export type SizeValue = SizeTypes | (string & {}) | number
 
@@ -102,12 +92,34 @@ export interface SamuraiUISizingProps {
 }
 
 export interface SamuraiUILayoutProps {
-  flex?: FlexProperty
+  flex?: string
   flexGrow?: number
   flexShrink?: number
   flexBasis?: number | string
-  alignSelf?: AlignSelfProperty
-  justifySelf?: JustifySelfProperty
+  alignSelf?:
+    | 'auto'
+    | 'normal'
+    | 'start'
+    | 'end'
+    | 'center'
+    | 'flex-start'
+    | 'flex-end'
+    | 'self-start'
+    | 'self-end'
+    | 'stretch'
+  justifySelf?:
+    | 'auto'
+    | 'normal'
+    | 'start'
+    | 'end'
+    | 'flex-start'
+    | 'flex-end'
+    | 'self-start'
+    | 'self-end'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'stretch'
   order?: number
   gridArea?: string
   gridColumn?: string
@@ -131,7 +143,7 @@ export interface SamuraiUIMarginProps {
 }
 
 export interface SamuraiUIPositioningProps {
-  position?: PositionProperty
+  position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
   top?: SizeValue
   left?: SizeValue
   right?: SizeValue
@@ -151,8 +163,46 @@ export interface SamuraiUIDisplayProps {
     | 'grid'
     | 'inherit'
     | 'none'
-  visibility?: VisibilityProperty
-  cursor?: CursorProperty
+  visibility?: 'visible' | 'hidden' | 'collapse'
+  cursor?:
+    | 'help'
+    | 'wait'
+    | 'pointer'
+    | 'crosshair'
+    | 'not-allowed'
+    | 'zoom-in'
+    | 'grab'
+    | 'auto'
+    | 'default'
+    | 'none'
+    | 'context-menu'
+    | 'progress'
+    | 'cell'
+    | 'text'
+    | 'vertical-text'
+    | 'alias'
+    | 'copy'
+    | 'move'
+    | 'no-drop'
+    | 'not-allowed'
+    | 'grabbing'
+    | 'all-scroll'
+    | 'col-resize'
+    | 'row-resize'
+    | 'n-resize'
+    | 'e-resize'
+    | 's-resize'
+    | 'w-resize'
+    | 'ne-resize'
+    | 'nw-resize'
+    | 'se-resize'
+    | 'sw-resize'
+    | 'ew-resize'
+    | 'ns-resize'
+    | 'nesw-resize'
+    | 'nwse-resize'
+    | 'zoom-in'
+    | 'zoom-out'
   boxShadow?: ShadowTypes
   hide?: BreakpointTypes[] | boolean
   show?: BreakpointTypes[] | boolean

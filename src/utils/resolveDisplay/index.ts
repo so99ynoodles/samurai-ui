@@ -1,5 +1,5 @@
-import { Theme, BreakpointTypes } from '../../types'
 import { css } from 'styled-components'
+import { Theme, BreakpointTypes } from '../../types'
 
 export function resolveHide(theme: Theme, hide?: BreakpointTypes[] | boolean) {
   if (typeof hide === 'boolean') {

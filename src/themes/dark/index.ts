@@ -12,13 +12,13 @@ import { shadows } from '../../foundations/shadows'
 
 export const darkTheme: Theme = {
   palette,
-  shadows: shadows,
+  shadows,
   spacing: sizes,
-  radius: radius,
+  radius,
   typography: {
     colors: typographyDarkColors,
     sizes: typographySizes,
   },
-  breakpoints: breakpoints,
+  breakpoints,
   colors: darkColors,
 }

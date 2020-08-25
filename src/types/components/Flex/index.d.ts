@@ -1,10 +1,10 @@
+import { ReactNode } from 'react'
 import {
   SamuraiUIPaddingProps,
   SamuraiUIComponentProps,
   SizeValue,
   SamuraiUITextProps,
 } from '../../shared'
-import { ReactNode } from 'react'
 
 export interface SamuraiUIFlexProps
   extends SamuraiUIComponentProps,

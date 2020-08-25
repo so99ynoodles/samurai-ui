@@ -1,4 +1,5 @@
 import { PressProps, HoverProps } from '@react-aria/interactions'
+import { ReactNode, JSXElementConstructor } from 'react'
 import {
   SamuraiUIPaddingProps,
   SamuraiUIComponentProps,
@@ -8,7 +9,6 @@ import {
   TypographyColorTypes,
   SamuraiUITextProps,
 } from '../../shared'
-import { ReactNode, JSXElementConstructor } from 'react'
 
 export interface SamuraiUIContainerStyleProps
   extends SamuraiUIPaddingProps,

@@ -7,6 +7,7 @@ import {
   PaletteTypes,
   ShadowTypes,
   ThemeColorTypes,
+  BreakpointTypes,
 } from '../shared'
 
 export type Theme = {
@@ -32,11 +33,6 @@ export type Theme = {
     [key in RadiusTypes]: string
   }
   breakpoints: {
-    max: {
-      [key in BreakpointTypes]: string
-    }
-    min: {
-      [key in BreakpointTypes]: string
-    }
+    [key in BreakpointTypes]: string
   }
 }

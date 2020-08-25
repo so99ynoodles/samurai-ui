@@ -4,7 +4,7 @@ import {
   SamuraiUIComponentProps,
   SamuraiUIColorTypes,
   RadiusTypes,
-} from '../shared'
+} from '../../shared'
 import { ReactNode, JSXElementConstructor } from 'react'
 
 export interface SamuraiUIButtonStyleProps extends SamuraiUIPaddingProps {
@@ -17,9 +17,10 @@ export interface SamuraiUIButtonStyleProps extends SamuraiUIPaddingProps {
 export interface SamuraiUIButtonProps
   extends SamuraiUIComponentProps,
     SamuraiUIButtonStyleProps,
-    PressProps {
+    PressProps,
+    HoverProps {
   children?: ReactNode
-  elementType?: string
+  elementType?: (string & {}) | 'button' | 'div' | 'a'
   type?: 'button' | 'submit' | 'reset'
   autoFocus?: boolean
 }

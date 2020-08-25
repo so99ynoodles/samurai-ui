@@ -5,6 +5,8 @@ import {
   SamuraiUIPaddingProps,
 } from '../../types'
 import { resolveSize } from '../resolveSize'
+import { resolveShadow } from '../resolveShadow'
+import { resolveHide, resolveShow } from '../resolveDisplay'
 
 export function resolveComponentProps(
   theme: Theme,
@@ -62,6 +64,14 @@ export function resolveComponentProps(
       inset-inline-start: ${resolveSize(theme, props.start)};
       inset-inline-end: ${resolveSize(theme, props.end)};
       z-index: ${props.zIndex};
+
+      display: ${props.display};
+      visibility: ${props.visibility};
+      cursor: ${props.cursor};
+      box-shadow: ${resolveShadow(theme, props.boxShadow)};
+
+      ${resolveHide(theme, props.hide)}
+      ${resolveShow(theme, props.show)}
     }
   `
 }

@@ -4,7 +4,7 @@ import {
   SamuraiUIComponentProps,
   SamuraiUIColorTypes,
   RadiusTypes,
-} from '../shared'
+} from '../../shared'
 import { ReactNode, JSXElementConstructor } from 'react'
 
 export interface SamuraiUIContainerStyleProps extends SamuraiUIPaddingProps {
@@ -15,8 +15,7 @@ export interface SamuraiUIContainerStyleProps extends SamuraiUIPaddingProps {
 export interface SamuraiUIContainerProps
   extends SamuraiUIComponentProps,
     SamuraiUIContainerStyleProps,
-    PressProps {
+    PressProps,
+    HoverProps {
   children?: ReactNode
-  elementType?: string
-  type?: 'Container' | 'submit' | 'reset'
 }

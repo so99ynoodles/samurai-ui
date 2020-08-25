@@ -1,9 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { SamuraiUIButtonProps } from '../../types/Button'
 import { resolveComponentProps } from '../../utils'
 import { isSamuraiUIColors } from '../../utils/resolveColors'
-import { SamuraiUIInteractionProps } from '../../types/shared'
+import { SamuraiUIButtonProps, SamuraiUIInteractionProps } from '../../types'
 
 const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};

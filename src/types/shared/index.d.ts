@@ -112,7 +112,7 @@ export interface SamuraiUILayoutProps {
   gridRowEnd?: string
 }
 
-export interface SamuraiUIsizeProps {
+export interface SamuraiUIMarginProps {
   margin?: SizeValue
   marginStart?: SizeValue
   marginEnd?: SizeValue
@@ -135,6 +135,23 @@ export interface SamuraiUIPositioningProps {
   zIndex?: number
 }
 
+export interface SamuraiUIDisplayProps {
+  display?:
+    | (string | {})
+    | 'inline'
+    | 'inline-block'
+    | 'block'
+    | 'flex'
+    | 'grid'
+    | 'inherit'
+    | 'none'
+  visibility?: VisibilityProperty
+  cursor?: CursorProperty
+  boxShadow?: ShadowTypes
+  hide?: BreakpointTypes[] | boolean
+  show?: BreakpointTypes[] | boolean
+}
+
 export type SamuraiUIColorTypes =
   | 'red'
   | 'orange'
@@ -148,13 +165,10 @@ export type SamuraiUIColorTypes =
 
 export interface SamuraiUIComponentProps
   extends SamuraiUISizingProps,
-    SamuraiUIsizeProps,
+    SamuraiUIMarginProps,
     SamuraiUIPositioningProps,
-    SamuraiUILayoutProps {
+    SamuraiUILayoutProps,
+    SamuraiUIDisplayProps {
   id?: string
-  display?: DisplayProperty
-  visibility?: VisibilityProperty
   className?: string
-  boxShadow?: ShadowTypes
-  cursor?: CursorProperty
 }

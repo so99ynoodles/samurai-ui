@@ -2,7 +2,7 @@ import React from 'react'
 import { useButton } from '@react-aria/button'
 import { useHover } from '@react-aria/interactions'
 import { mergeProps } from '@react-aria/utils'
-import { SamuraiUIButtonProps } from '../../types/Button'
+import { SamuraiUIButtonProps } from '../../types'
 import { StyledButton } from './styled'
 
 function Button(props: SamuraiUIButtonProps) {

@@ -8,23 +8,10 @@ const size = {
 }
 
 export const breakpoints: {
-  max: {
-    [key in BreakpointTypes]: string
-  }
-  min: {
-    [key in BreakpointTypes]: string
-  }
+  [key in BreakpointTypes]: string
 } = {
-  max: {
-    mobile: `(max-width: ${size.mobile - 1}px)`,
-    tablet: `(max-width: ${size.tablet - 1}px)`,
-    laptop: `(max-width: ${size.laptop - 1}px)`,
-    desktop: `(max-width: ${size.desktop - 1}px)`,
-  },
-  min: {
-    mobile: `(min-width: ${size.mobile}px)`,
-    tablet: `(min-width: ${size.tablet}px)`,
-    laptop: `(min-width: ${size.laptop}px)`,
-    desktop: `(max-width: ${size.desktop}px)`,
-  },
+  mobile: `(max-width: ${size.mobile - 1}px)`,
+  tablet: `(min-width: ${size.mobile}px) and (max-width: ${size.tablet - 1}px)`,
+  laptop: `(min-width: ${size.tablet}px) and (max-width: ${size.laptop - 1}px)`,
+  desktop: `(min-width: ${size.desktop}px)`,
 }

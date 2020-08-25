@@ -7,9 +7,11 @@ import {
 } from '../../shared'
 import { ReactNode, JSXElementConstructor } from 'react'
 
-export interface SamuraiUIButtonStyleProps extends SamuraiUIPaddingProps {
-  borderRadius?: RadiusTypes
-  backgroundColor?: SamuraiUIColorTypes
+export interface SamuraiUIButtonStyleProps
+  extends SamuraiUIPaddingProps,
+    SamuraiUITextProps {
+  radius?: RadiusTypes
+  buttonColor?: SamuraiUIColorTypes
   fluid?: boolean
   vivid?: boolean
 }

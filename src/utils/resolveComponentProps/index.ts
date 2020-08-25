@@ -3,16 +3,24 @@ import {
   SamuraiUIComponentProps,
   Theme,
   SamuraiUIPaddingProps,
+  SamuraiUITextProps,
 } from '../../types'
 import { resolveSize } from '../resolveSize'
 import { resolveShadow } from '../resolveShadow'
 import { resolveHide, resolveShow } from '../resolveDisplay'
+import { resolveFontColors, resolveFontSize } from '../resolveTypography'
 
 export function resolveComponentProps(
   theme: Theme,
-  props: SamuraiUIComponentProps & SamuraiUIPaddingProps
+  props: SamuraiUIComponentProps & SamuraiUIPaddingProps & SamuraiUITextProps
 ) {
   return css`
+    color: ${resolveFontColors(theme, props.textColor)};
+    text-align: ${props.textAlign};
+    font-size: ${props.textSize
+      ? resolveFontSize(theme, props.textSize)
+      : theme.typography.sizes.small};
+
     &&& {
       width: ${resolveSize(theme, props.width)};
       min-width: ${resolveSize(theme, props.minWidth)};

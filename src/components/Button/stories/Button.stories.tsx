@@ -5,80 +5,80 @@ import Button from '../'
 
 storiesOf('Button', module)
   .add('default', () => <Button onPress={action('onPress')}>button</Button>)
-  .add('backgroundColor', () => (
+  .add('buttonColor', () => (
     <>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="red"
+        buttonColor="red"
       >
         red
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="yellow"
+        buttonColor="yellow"
       >
         yellow
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="orange"
+        buttonColor="orange"
       >
         orange
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="green"
+        buttonColor="green"
       >
         green
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="indigo"
+        buttonColor="indigo"
       >
         indigo
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="teal"
+        buttonColor="teal"
       >
         teal
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="blue"
+        buttonColor="blue"
       >
         blue
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="purple"
+        buttonColor="purple"
       >
         purple
       </Button>
       <Button
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="pink"
+        buttonColor="pink"
       >
         pink
       </Button>
     </>
   ))
-  .add('vivid backgroundColor', () => (
+  .add('vivid buttonColor', () => (
     <>
       <Button
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="red"
+        buttonColor="red"
       >
         red
       </Button>
@@ -86,7 +86,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="yellow"
+        buttonColor="yellow"
       >
         yellow
       </Button>
@@ -94,7 +94,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="orange"
+        buttonColor="orange"
       >
         orange
       </Button>
@@ -102,7 +102,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="green"
+        buttonColor="green"
       >
         green
       </Button>
@@ -110,7 +110,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="indigo"
+        buttonColor="indigo"
       >
         indigo
       </Button>
@@ -118,7 +118,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="teal"
+        buttonColor="teal"
       >
         teal
       </Button>
@@ -126,7 +126,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="blue"
+        buttonColor="blue"
       >
         blue
       </Button>
@@ -134,7 +134,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="purple"
+        buttonColor="purple"
       >
         purple
       </Button>
@@ -142,18 +142,14 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="pink"
+        buttonColor="pink"
       >
         pink
       </Button>
     </>
   ))
   .add('borderRadius', () => (
-    <Button
-      onPress={action('onPress')}
-      borderRadius="circular"
-      className="button"
-    >
+    <Button onPress={action('onPress')} radius="circular" className="button">
       circular
     </Button>
   ))
@@ -177,7 +173,7 @@ storiesOf('Button', module)
         vivid
         onPress={action('onPress')}
         marginEnd="size:004"
-        backgroundColor="red"
+        buttonColor="red"
       >
         autoFocus
       </Button>

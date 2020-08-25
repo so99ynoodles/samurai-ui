@@ -4,13 +4,15 @@ import {
   SamuraiUIComponentProps,
   SamuraiUIColorTypes,
   RadiusTypes,
+  TypographySizeTypes,
+  TypographyColorTypes,
+  SamuraiUITextProps,
 } from '../../shared'
 import { ReactNode, JSXElementConstructor } from 'react'
 
-export interface SamuraiUIContainerStyleProps extends SamuraiUIPaddingProps {
-  borderRadius?: RadiusTypes
-  backgroundColor?: SamuraiUIColorTypes
-}
+export interface SamuraiUIContainerStyleProps
+  extends SamuraiUIPaddingProps,
+    SamuraiUITextProps {}
 
 export interface SamuraiUIContainerProps
   extends SamuraiUIComponentProps,

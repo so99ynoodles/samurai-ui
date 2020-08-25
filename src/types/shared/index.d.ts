@@ -70,6 +70,12 @@ export type ColorValue = ColorTypes | (string & {})
 
 export type SizeValue = SizeTypes | (string & {}) | number
 
+export interface SamuraiUITextProps {
+  textColor?: TypographyColorTypes | (string & {})
+  textSize?: TypographySizeTypes | (string & {})
+  textAlign?: 'start' | 'end' | 'left' | 'right' | 'center'
+}
+
 export interface SamuraiUIInteractionProps {
   isHovered?: boolean
   isPressed?: boolean
@@ -137,7 +143,7 @@ export interface SamuraiUIPositioningProps {
 
 export interface SamuraiUIDisplayProps {
   display?:
-    | (string | {})
+    | (string & {})
     | 'inline'
     | 'inline-block'
     | 'block'

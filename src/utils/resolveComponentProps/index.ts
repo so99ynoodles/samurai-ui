@@ -30,6 +30,11 @@ export function resolveComponentProps(
       resolveFontSize,
       theme.typography.sizes.small
     )};
+    font-weight: ${props.bold ? 'bold' : 'normal'};
+    text-decoration: ${props.underline && 'underline'}
+      ${props.lineThrough && 'line-through'};
+    text-transform: ${props.upperCase ? 'uppercase' : 'none'};
+    font-style: ${props.italic ? 'italic' : 'normal'};
 
     &&& {
       ${resolveResponsiveProps('width', theme, props.width, resolveSize)};

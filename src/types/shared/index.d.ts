@@ -67,6 +67,11 @@ export interface SamuraiUITextProps {
   textColor?: TypographyColorValue | TypographyColorValue[]
   textSize?: TypographySizeValue | TypographySizeValue[]
   textAlign?: TextAlign | TextAlign[]
+  bold?: boolean
+  lineThrough?: boolean
+  italic?: boolean
+  underline?: boolean
+  upperCase?: boolean
 }
 
 export interface SamuraiUIInteractionProps {

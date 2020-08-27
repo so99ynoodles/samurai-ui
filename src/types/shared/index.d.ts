@@ -99,9 +99,78 @@ export interface SamuraiUISizingProps {
   maxHeight?: SizeValue | SizeValue[]
 }
 
-type TextAlign = 'start' | 'end' | 'left' | 'right' | 'center'
+export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse'
 
-type AlignSelf =
+export type Wrap = boolean | 'wrap' | 'nowrap' | 'wrap-reverse'
+
+export type TextAlign = 'start' | 'end' | 'left' | 'right' | 'center'
+
+export type AutoFlow = 'row' | 'column' | 'row dense' | 'column dense'
+
+export type JustifyItems =
+  | 'auto'
+  | 'normal'
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'left'
+  | 'right'
+  | 'stretch'
+  | 'self-start'
+  | 'self-end'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+  | 'legacy right'
+  | 'legacy left'
+  | 'legacy center'
+
+export type JustifyContent =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'left'
+  | 'right'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'stretch'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+
+export type AlignContent =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'stretch'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+
+export type AlignItems =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'stretch'
+  | 'self-start'
+  | 'self-end'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+
+export type AlignSelf =
   | 'auto'
   | 'normal'
   | 'start'
@@ -113,7 +182,7 @@ type AlignSelf =
   | 'self-end'
   | 'stretch'
 
-type JustifySelf =
+export type JustifySelf =
   | 'auto'
   | 'normal'
   | 'start'
@@ -127,7 +196,7 @@ type JustifySelf =
   | 'right'
   | 'stretch'
 
-type Display =
+export type Display =
   | (string & {})
   | 'inline'
   | 'inline-block'
@@ -137,9 +206,9 @@ type Display =
   | 'inherit'
   | 'none'
 
-type Visibility = 'visible' | 'hidden' | 'collapse'
+export type Visibility = 'visible' | 'hidden' | 'collapse'
 
-type Cursor =
+export type Cursor =
   | 'help'
   | 'wait'
   | 'pointer'

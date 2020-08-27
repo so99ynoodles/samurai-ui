@@ -2,70 +2,52 @@
   "name": "samurai-ui",
   "version": "0.1.1",
   "private": false,
-  "dependencies": {
-    "@react-aria/button": "^3.1.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "styled-components": "^5.1.1"
-  },
-  "scripts": {
-    "start": "yarn storybook",
-    "build": "rimraf ./dist && tsc --project . --module es2015 --outDir ./dist",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@storybook/addon-a11y": "^6.0.5",
-    "@storybook/addon-actions": "^6.0.5",
-    "@storybook/addon-essentials": "^6.0.5",
-    "@storybook/addon-links": "^6.0.5",
-    "@storybook/node-logger": "^6.0.5",
-    "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.5",
-    "@storybook/source-loader": "^6.0.5",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/styled-components": "^5.1.2",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
-    "auto": "^9.52.0",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.0.8",
-    "react-is": "^16.13.1",
-    "typescript": "~3.7.2"
-  },
   "description": "React UI Component Library",
   "main": "dist/index.js",
   "repository": "git@github.com:so99ynoodles/samurai-ui.git",
   "author": "so99ynoodles <so99ynoodles@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@storybook/addon-actions": "^6.0.19",
+    "@storybook/addon-essentials": "^6.0.19",
+    "@storybook/addon-links": "^6.0.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.0.19",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^10.4.9",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.6.1",
+    "@types/styled-components": "^5.1.2",
+    "@types/testing-library__react": "^10.2.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "fork-ts-checker-webpack-plugin": "^5.1.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1",
+    "react-is": "^16.13.1",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "ts-jest": "^26.3.0",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "@react-aria/button": "^3.2.1",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "rollup -c",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+  }
 }

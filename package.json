@@ -12,6 +12,14 @@
   "files": [
     "build"
   ],
+  "dependencies": {
+    "@react-aria/button": "^3.2.1",
+    "styled-components": "^5.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@rollup/plugin-commonjs": "^15.0.0",
@@ -46,12 +54,6 @@
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2"
-  },
-  "dependencies": {
-    "@react-aria/button": "^3.2.1",
-    "styled-components": "^5.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

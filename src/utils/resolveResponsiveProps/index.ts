@@ -18,10 +18,12 @@ export function resolveResponsiveProps(
 ) {
   const stylesArray = []
 
+  /** for default */
   stylesArray.push(css`
     ${propertyName}: ${resolver(theme, propertyValue || defaultValue)};
   `)
 
+  /** if the property is array */
   if (Array.isArray(propertyValue)) {
     stylesArray.push(
       propertyValue.map((v, index) => {
@@ -32,6 +34,13 @@ export function resolveResponsiveProps(
         `
       })
     )
+
+    /** set mobile style as default */
+    if (propertyValue.length) {
+      stylesArray.push(css`
+        ${propertyName}: ${resolver(theme, propertyValue[0])};
+      `)
+    }
   }
 
   return stylesArray

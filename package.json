@@ -12,6 +12,10 @@
   "files": [
     "build"
   ],
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@rollup/plugin-commonjs": "^15.0.0",

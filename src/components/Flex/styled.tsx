@@ -31,13 +31,35 @@ export const StyledFlex = styled.div<SamuraiUIFlexProps>`
       theme,
       typeof wrap === 'string' ? wrap : wrap ? 'wrap' : 'nowrap'
     )}
-    ${resolveResponsiveProps('justify-content', theme, justifyContent)}
-    ${resolveResponsiveProps('align-content', theme, alignContent)}
-    ${resolveResponsiveProps('align-items', theme, alignItems)}
+    ${resolveResponsiveProps(
+      'justify-content',
+      theme,
+      justifyContent
+    )}
+    ${resolveResponsiveProps(
+      'align-content',
+      theme,
+      alignContent
+    )}
+    ${resolveResponsiveProps(
+      'align-items',
+      theme,
+      alignItems
+    )}
 
-    ${resolveResponsiveProps('gap', theme, gap, resolveSize)}
-    ${resolveResponsiveProps('row-gap', theme, rowGap, resolveSize)}
+    ${resolveResponsiveProps(
+      'gap',
+      theme,
+      gap,
+      resolveSize
+    )}
+    ${resolveResponsiveProps(
+      'row-gap',
+      theme,
+      rowGap,
+      resolveSize
+    )}
     ${resolveResponsiveProps('column-gap', theme, columnGap, resolveSize)}
-`};
+  `};
   ${(props) => resolveComponentProps(props.theme, props)};
 `

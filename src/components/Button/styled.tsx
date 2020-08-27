@@ -30,11 +30,11 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
 
   border: 1px solid
     ${({ theme, buttonColor, vivid }) =>
-      isSamuraiUIColors(buttonColor)
-        ? vivid
-          ? theme.palette[buttonColor!].deep
-          : theme.palette[buttonColor!].dull
-        : theme.colors.border};
+    isSamuraiUIColors(buttonColor)
+      ? vivid
+        ? theme.palette[buttonColor!].deep
+        : theme.palette[buttonColor!].dull
+      : theme.colors.border};
   color: ${({ theme, buttonColor }) =>
     isSamuraiUIColors(buttonColor)
       ? theme.palette.white
@@ -46,9 +46,9 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
         : theme.palette[buttonColor!].light
       : theme.colors.background};
   outline-color: ${({ theme }) => theme.colors.outline};
-    ${({ isHovered, theme, buttonColor, vivid }) =>
-      isHovered &&
-      css`
+  ${({ isHovered, theme, buttonColor, vivid }) =>
+    isHovered &&
+    css`
     color: ${theme.palette.white};
     background-color: ${
       isSamuraiUIColors(buttonColor)
@@ -59,9 +59,9 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
     };}
     box-shadow: ${theme.shadows.medium};
   `}
-    ${({ isPressed, theme, buttonColor, vivid }) =>
-      isPressed &&
-      css`
+  ${({ isPressed, theme, buttonColor, vivid }) =>
+    isPressed &&
+    css`
     color: ${theme.palette.white};
     background-color: ${
       isSamuraiUIColors(buttonColor)

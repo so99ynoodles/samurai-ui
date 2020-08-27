@@ -3,10 +3,11 @@
   "version": "0.1.1",
   "private": false,
   "description": "React UI Component Library",
-  "main": "dist/index.js",
   "repository": "git@github.com:so99ynoodles/samurai-ui.git",
   "author": "so99ynoodles <so99ynoodles@gmail.com>",
   "license": "MIT",
+  "main": "./build/index.js",
+  "module": "./build/index.es.js",
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@rollup/plugin-commonjs": "^15.0.0",
@@ -34,6 +35,7 @@
     "jest": "^26.4.2",
     "prettier": "^2.1.1",
     "react-is": "^16.13.1",
+    "rollup": "^2.26.6",
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-typescript2": "^0.27.2",
     "ts-jest": "^26.3.0",
@@ -47,7 +49,6 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "build": "rollup -c"
   }
 }

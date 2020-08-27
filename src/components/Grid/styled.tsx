@@ -33,20 +33,51 @@ export const StyledGrid = styled.div<SamuraiUIGridProps>`
     columnGap,
   }) => css`
     ${resolveResponsiveProps('grid-auto-flow', theme, autoFlow)}
-    ${resolveResponsiveProps('justify-content', theme, justifyContent)}
-    ${resolveResponsiveProps('justify-items', theme, justifyItems)}
-    ${resolveResponsiveProps('align-content', theme, alignContent)}
-    ${resolveResponsiveProps('align-items', theme, alignItems)}
-    ${resolveResponsiveProps('grid-auto-rows', theme, autoRows, resolveSize)}
+    ${resolveResponsiveProps(
+      'justify-content',
+      theme,
+      justifyContent
+    )}
+    ${resolveResponsiveProps(
+      'justify-items',
+      theme,
+      justifyItems
+    )}
+    ${resolveResponsiveProps(
+      'align-content',
+      theme,
+      alignContent
+    )}
+    ${resolveResponsiveProps(
+      'align-items',
+      theme,
+      alignItems
+    )}
+    ${resolveResponsiveProps(
+      'grid-auto-rows',
+      theme,
+      autoRows,
+      resolveSize
+    )}
     ${resolveResponsiveProps(
       'grid-auto-columns',
       theme,
       autoColumns,
       resolveSize
     )}
-    ${resolveResponsiveProps('gap', theme, gap, resolveSize)}
-    ${resolveResponsiveProps('row-gap', theme, rowGap, resolveSize)}
+    ${resolveResponsiveProps(
+      'gap',
+      theme,
+      gap,
+      resolveSize
+    )}
+    ${resolveResponsiveProps(
+      'row-gap',
+      theme,
+      rowGap,
+      resolveSize
+    )}
     ${resolveResponsiveProps('column-gap', theme, columnGap, resolveSize)}
-`};
+  `};
   ${(props) => resolveComponentProps(props.theme, props)};
 `

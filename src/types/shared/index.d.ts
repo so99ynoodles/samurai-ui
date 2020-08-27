@@ -60,10 +60,13 @@ export type ColorValue = ThemeColorTypes | (string & {})
 
 export type SizeValue = SizeTypes | (string & {}) | number
 
+export type TypographyColorValue = TypographyColorTypes | (string & {})
+export type TypographySizeValue = TypographySizeTypes | (string & {})
+
 export interface SamuraiUITextProps {
-  textColor?: TypographyColorTypes | (string & {})
-  textSize?: TypographySizeTypes | (string & {})
-  textAlign?: 'start' | 'end' | 'left' | 'right' | 'center'
+  textColor?: TypographyColorValue | TypographyColorValue[]
+  textSize?: TypographySizeValue | TypographySizeValue[]
+  textAlign?: TextAlign | TextAlign[]
 }
 
 export interface SamuraiUIInteractionProps {
@@ -73,137 +76,149 @@ export interface SamuraiUIInteractionProps {
 }
 
 export interface SamuraiUIPaddingProps {
-  padding?: SizeValue
-  paddingX?: SizeValue
-  paddingY?: SizeValue
-  paddingLeft?: SizeValue
-  paddingRight?: SizeValue
-  paddingTop?: SizeValue
-  paddingBottom?: SizeValue
+  padding?: SizeValue | SizeValue[]
+  paddingX?: SizeValue | SizeValue[]
+  paddingY?: SizeValue | SizeValue[]
+  paddingLeft?: SizeValue | SizeValue[]
+  paddingRight?: SizeValue | SizeValue[]
+  paddingTop?: SizeValue | SizeValue[]
+  paddingBottom?: SizeValue | SizeValue[]
 }
 
 export interface SamuraiUISizingProps {
-  width?: SizeValue
-  minWidth?: SizeValue
-  maxWidth?: SizeValue
-  height?: SizeValue
-  minHeight?: SizeValue
-  maxHeight?: SizeValue
+  width?: SizeValue | SizeValue[]
+  minWidth?: SizeValue | SizeValue[]
+  maxWidth?: SizeValue | SizeValue[]
+  height?: SizeValue | SizeValue[]
+  minHeight?: SizeValue | SizeValue[]
+  maxHeight?: SizeValue | SizeValue[]
 }
 
+type TextAlign = 'start' | 'end' | 'left' | 'right' | 'center'
+
+type AlignSelf =
+  | 'auto'
+  | 'normal'
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'self-start'
+  | 'self-end'
+  | 'stretch'
+
+type JustifySelf =
+  | 'auto'
+  | 'normal'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'self-start'
+  | 'self-end'
+  | 'center'
+  | 'left'
+  | 'right'
+  | 'stretch'
+
+type Display =
+  | (string & {})
+  | 'inline'
+  | 'inline-block'
+  | 'block'
+  | 'flex'
+  | 'grid'
+  | 'inherit'
+  | 'none'
+
+type Visibility = 'visible' | 'hidden' | 'collapse'
+
+type Cursor =
+  | 'help'
+  | 'wait'
+  | 'pointer'
+  | 'crosshair'
+  | 'not-allowed'
+  | 'zoom-in'
+  | 'grab'
+  | 'auto'
+  | 'default'
+  | 'none'
+  | 'context-menu'
+  | 'progress'
+  | 'cell'
+  | 'text'
+  | 'vertical-text'
+  | 'alias'
+  | 'copy'
+  | 'move'
+  | 'no-drop'
+  | 'not-allowed'
+  | 'grabbing'
+  | 'all-scroll'
+  | 'col-resize'
+  | 'row-resize'
+  | 'n-resize'
+  | 'e-resize'
+  | 's-resize'
+  | 'w-resize'
+  | 'ne-resize'
+  | 'nw-resize'
+  | 'se-resize'
+  | 'sw-resize'
+  | 'ew-resize'
+  | 'ns-resize'
+  | 'nesw-resize'
+  | 'nwse-resize'
+  | 'zoom-in'
+  | 'zoom-out'
+
 export interface SamuraiUILayoutProps {
-  flex?: string
-  flexGrow?: number
-  flexShrink?: number
-  flexBasis?: number | string
-  alignSelf?:
-    | 'auto'
-    | 'normal'
-    | 'start'
-    | 'end'
-    | 'center'
-    | 'flex-start'
-    | 'flex-end'
-    | 'self-start'
-    | 'self-end'
-    | 'stretch'
-  justifySelf?:
-    | 'auto'
-    | 'normal'
-    | 'start'
-    | 'end'
-    | 'flex-start'
-    | 'flex-end'
-    | 'self-start'
-    | 'self-end'
-    | 'center'
-    | 'left'
-    | 'right'
-    | 'stretch'
-  order?: number
-  gridArea?: string
-  gridColumn?: string
-  gridRow?: string
-  gridColumnStart?: string
-  gridColumnEnd?: string
-  gridRowStart?: string
-  gridRowEnd?: string
+  flex?: string | string[]
+  flexGrow?: number | number[]
+  flexShrink?: number | number[]
+  flexBasis?: number | string | number[] | string[]
+  alignSelf?: AlignSelf | AlignSelf[]
+  justifySelf?: JustifySelf | JustifySelf[]
+  order?: number | number[]
+  gridArea?: string | string[]
+  gridColumn?: string | string[]
+  gridRow?: string | string[]
+  gridColumnStart?: string | string[]
+  gridColumnEnd?: string | string[]
+  gridRowStart?: string | string[]
+  gridRowEnd?: string | string[]
 }
 
 export interface SamuraiUIMarginProps {
-  margin?: SizeValue
-  marginStart?: SizeValue
-  marginEnd?: SizeValue
-  marginX?: SizeValue
-  marginY?: SizeValue
-  marginLeft?: SizeValue
-  marginRight?: SizeValue
-  marginBottom?: SizeValue
-  marginTop?: SizeValue
+  margin?: SizeValue | SizeValue[]
+  marginStart?: SizeValue | SizeValue[]
+  marginEnd?: SizeValue | SizeValue[]
+  marginX?: SizeValue | SizeValue[]
+  marginY?: SizeValue | SizeValue[]
+  marginLeft?: SizeValue | SizeValue[]
+  marginRight?: SizeValue | SizeValue[]
+  marginBottom?: SizeValue | SizeValue[]
+  marginTop?: SizeValue | SizeValue[]
 }
 
 export interface SamuraiUIPositioningProps {
   position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
-  top?: SizeValue
-  left?: SizeValue
-  right?: SizeValue
-  bottom?: SizeValue
-  start?: SizeValue
-  end?: SizeValue
-  zIndex?: number
+  top?: SizeValue | SizeValue[]
+  left?: SizeValue | SizeValue[]
+  right?: SizeValue | SizeValue[]
+  bottom?: SizeValue | SizeValue[]
+  start?: SizeValue | SizeValue[]
+  end?: SizeValue | SizeValue[]
+  zIndex?: number | number[]
 }
 
 export interface SamuraiUIDisplayProps {
-  display?:
-    | (string & {})
-    | 'inline'
-    | 'inline-block'
-    | 'block'
-    | 'flex'
-    | 'grid'
-    | 'inherit'
-    | 'none'
-  visibility?: 'visible' | 'hidden' | 'collapse'
-  cursor?:
-    | 'help'
-    | 'wait'
-    | 'pointer'
-    | 'crosshair'
-    | 'not-allowed'
-    | 'zoom-in'
-    | 'grab'
-    | 'auto'
-    | 'default'
-    | 'none'
-    | 'context-menu'
-    | 'progress'
-    | 'cell'
-    | 'text'
-    | 'vertical-text'
-    | 'alias'
-    | 'copy'
-    | 'move'
-    | 'no-drop'
-    | 'not-allowed'
-    | 'grabbing'
-    | 'all-scroll'
-    | 'col-resize'
-    | 'row-resize'
-    | 'n-resize'
-    | 'e-resize'
-    | 's-resize'
-    | 'w-resize'
-    | 'ne-resize'
-    | 'nw-resize'
-    | 'se-resize'
-    | 'sw-resize'
-    | 'ew-resize'
-    | 'ns-resize'
-    | 'nesw-resize'
-    | 'nwse-resize'
-    | 'zoom-in'
-    | 'zoom-out'
-  boxShadow?: ShadowTypes
+  display?: Display | Display[]
+  visibility?: Visibility | Visibility[]
+  cursor?: Cursor | Cursor[]
+  boxShadow?: ShadowTypes | ShadowTypes[]
   hide?: BreakpointTypes[] | boolean
   show?: BreakpointTypes[] | boolean
 }

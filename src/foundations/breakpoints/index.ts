@@ -13,5 +13,5 @@ export const breakpoints: {
   mobile: `(max-width: ${size.mobile - 1}px)`,
   tablet: `(min-width: ${size.mobile}px) and (max-width: ${size.tablet - 1}px)`,
   laptop: `(min-width: ${size.tablet}px) and (max-width: ${size.laptop - 1}px)`,
-  desktop: `(min-width: ${size.desktop}px)`,
+  desktop: `(min-width: ${size.laptop}px)`,
 }

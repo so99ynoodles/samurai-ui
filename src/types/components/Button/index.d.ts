@@ -11,7 +11,7 @@ import {
 export interface SamuraiUIButtonStyleProps
   extends SamuraiUIPaddingProps,
     SamuraiUITextProps {
-  radius?: RadiusTypes
+  radius?: RadiusTypes | RadiusTypes[]
   buttonColor?: SamuraiUIColorTypes
   fluid?: boolean
   vivid?: boolean

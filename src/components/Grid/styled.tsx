@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { SamuraiUIGridProps } from '../../types'
-import { resolveComponentProps, resolveSize } from '../../utils'
+import {
+  resolveComponentProps,
+  resolveSize,
+  resolveResponsiveProps,
+} from '../../utils'
 
 export const StyledGrid = styled.div<SamuraiUIGridProps>`
   display: grid;
@@ -14,15 +18,35 @@ export const StyledGrid = styled.div<SamuraiUIGridProps>`
     Array.isArray(columns)
       ? columns.map((column) => resolveSize(theme, column)).join(' ')
       : columns}
-  grid-auto-rows: ${({ autoRows, theme }) => resolveSize(theme, autoRows)};
-  grid-auto-columns: ${({ autoColumns, theme }) =>
-    resolveSize(theme, autoColumns)};
-  grid-auto-flow: ${({ autoFlow }) => autoFlow};
-  justify-content: ${({ justifyContent }) => justifyContent};
-  align-content: ${({ alignContent }) => alignContent};
-  align-items: ${({ alignItems }) => alignItems};
-  gap: ${({ gap, theme }) => resolveSize(theme, gap)};
-  column-gap: ${({ columnGap, theme }) => resolveSize(theme, columnGap)};
-  row-gap: ${({ rowGap, theme }) => resolveSize(theme, rowGap)};
+
+  ${({
+    theme,
+    autoFlow,
+    justifyContent,
+    justifyItems,
+    alignContent,
+    alignItems,
+    autoRows,
+    autoColumns,
+    gap,
+    rowGap,
+    columnGap,
+  }) => css`
+    ${resolveResponsiveProps('grid-auto-flow', theme, autoFlow)}
+    ${resolveResponsiveProps('justify-content', theme, justifyContent)}
+    ${resolveResponsiveProps('justify-items', theme, justifyItems)}
+    ${resolveResponsiveProps('align-content', theme, alignContent)}
+    ${resolveResponsiveProps('align-items', theme, alignItems)}
+    ${resolveResponsiveProps('grid-auto-rows', theme, autoRows, resolveSize)}
+    ${resolveResponsiveProps(
+      'grid-auto-columns',
+      theme,
+      autoColumns,
+      resolveSize
+    )}
+    ${resolveResponsiveProps('gap', theme, gap, resolveSize)}
+    ${resolveResponsiveProps('row-gap', theme, rowGap, resolveSize)}
+    ${resolveResponsiveProps('column-gap', theme, columnGap, resolveSize)}
+`};
   ${(props) => resolveComponentProps(props.theme, props)};
 `

@@ -1,3 +1,13 @@
+# v0.1.2 (Fri Aug 28 2020)
+
+- Change build to rollup
+
+#### Authors: 1
+
+- Taiki Ikeda ([@so99ynoodles](https://github.com/so99ynoodles))
+
+---
+
 # v0.1.1 (Fri Aug 28 2020)
 
 - Testing TS Build.

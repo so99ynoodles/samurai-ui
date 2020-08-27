@@ -4,7 +4,7 @@ import { usePress, useHover } from '@react-aria/interactions'
 import { SamuraiUIContainerProps } from '../../types'
 import { StyledContainer } from './styled'
 
-function Container(props: SamuraiUIContainerProps) {
+export function Container(props: SamuraiUIContainerProps) {
   const { children } = props
   const containerRef = React.useRef<HTMLDivElement>(null)
   const { pressProps } = usePress({ ref: containerRef })
@@ -15,5 +15,3 @@ function Container(props: SamuraiUIContainerProps) {
     </StyledContainer>
   )
 }
-
-export default Container

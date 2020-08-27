@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
-import Container from '..'
+import { Container } from '..'
 
 storiesOf('Container', module)
   .add('default', () => (

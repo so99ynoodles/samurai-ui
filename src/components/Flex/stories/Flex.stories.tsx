@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Flex from '../'
+import { Flex } from '../'
 
 storiesOf('Flex', module)
   .add('default', () => (

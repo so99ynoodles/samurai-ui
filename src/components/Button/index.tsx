@@ -5,7 +5,7 @@ import { mergeProps } from '@react-aria/utils'
 import { SamuraiUIButtonProps } from '../../types'
 import { StyledButton } from './styled'
 
-function Button(props: SamuraiUIButtonProps) {
+export function Button(props: SamuraiUIButtonProps) {
   const {
     children,
     className,
@@ -30,5 +30,3 @@ function Button(props: SamuraiUIButtonProps) {
     </StyledButton>
   )
 }
-
-export default Button

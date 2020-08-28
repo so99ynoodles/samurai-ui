@@ -11,6 +11,7 @@ import {
 
 const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};
+  line-height: ${({ theme }) => theme.typography.sizes.small};
   display: ${({ fluid }) => (fluid ? 'block' : 'inline-block')};
   width: ${({ fluid }) => (fluid ? '100%' : undefined)};
   cursor: ${(props) => props.cursor || 'default'};
@@ -49,28 +50,32 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   ${({ isHovered, theme, buttonColor, vivid }) =>
     isHovered &&
     css`
-    color: ${theme.palette.white};
-    background-color: ${
-      isSamuraiUIColors(buttonColor)
+      color: ${theme.palette.white};
+      background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
           ? theme.palette[buttonColor!].strong
           : theme.palette[buttonColor!].soft
-        : theme.colors['background:hover']
-    };}
-    box-shadow: ${theme.shadows.medium};
-  `}
+        : theme.colors['background:hover']};
+      box-shadow: ${theme.shadows.medium};
+    `}
   ${({ isPressed, theme, buttonColor, vivid }) =>
     isPressed &&
     css`
-    color: ${theme.palette.white};
-    background-color: ${
-      isSamuraiUIColors(buttonColor)
+      color: ${theme.palette.white};
+      background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
           ? theme.palette[buttonColor!].deep
           : theme.palette[buttonColor!].dull
-        : theme.colors['background:active']
-    };}
-  `}
+        : theme.colors['background:active']};
+    `}
+  ${({ isDisabled, theme, buttonColor }) =>
+    isDisabled &&
+    css`
+      color: ${theme.typography.colors['text:disabled']};
+      background-color: ${isSamuraiUIColors(buttonColor)
+        ? theme.palette[buttonColor!].pale
+        : theme.palette.white};
+    `}
     ${(props) => resolveComponentProps(props.theme, props)};
 `
 

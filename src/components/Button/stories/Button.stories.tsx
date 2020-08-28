@@ -4,7 +4,14 @@ import { storiesOf } from '@storybook/react'
 import { Button } from '../'
 
 storiesOf('Button', module)
-  .add('default', () => <Button onPress={action('onPress')}>button</Button>)
+  .add('default', () => (
+    <>
+      <Button onPress={action('onPress')}>button</Button>
+      <Button isDisabled onPress={action('onPress')}>
+        button
+      </Button>
+    </>
+  ))
   .add('buttonColor', () => (
     <>
       <Button
@@ -148,10 +155,125 @@ storiesOf('Button', module)
       </Button>
     </>
   ))
+  .add('isDisabled buttonColor', () => (
+    <>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="red"
+      >
+        red
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="yellow"
+      >
+        yellow
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="orange"
+      >
+        orange
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="green"
+      >
+        green
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="indigo"
+      >
+        indigo
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="teal"
+      >
+        teal
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="blue"
+      >
+        blue
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="purple"
+      >
+        purple
+      </Button>
+      <Button
+        isDisabled
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        buttonColor="pink"
+      >
+        pink
+      </Button>
+    </>
+  ))
   .add('borderRadius', () => (
-    <Button onPress={action('onPress')} radius="circular" className="button">
-      circular
-    </Button>
+    <>
+      <Button
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        radius="none"
+        className="button"
+      >
+        none
+      </Button>
+      <Button
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        radius="small"
+        className="button"
+      >
+        small
+      </Button>
+      <Button
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        radius="medium"
+        className="button"
+      >
+        medium
+      </Button>
+      <Button
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        radius="large"
+        className="button"
+      >
+        large
+      </Button>
+      <Button
+        onPress={action('onPress')}
+        marginEnd="size:004"
+        radius="circular"
+        className="button"
+      >
+        circular
+      </Button>
+    </>
   ))
   .add('elementType', () => (
     <>

@@ -23,7 +23,7 @@ export interface SamuraiUIButtonProps
     PressProps,
     HoverProps {
   children?: ReactNode
-  elementType?: (string & {}) | 'button' | 'div' | 'a'
+  elementType?: 'button' | 'div' | 'a'
   type?: 'button' | 'submit' | 'reset'
   autoFocus?: boolean
 }

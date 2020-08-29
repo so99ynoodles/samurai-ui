@@ -79,21 +79,26 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
     ${(props) => resolveComponentProps(props.theme, props)};
 `
 
-export const StyledButton = styled<
-  (
-    props: SamuraiUIButtonProps &
-      SamuraiUIInteractionProps & { buttonProps: any }
-  ) => React.ReactElement<SamuraiUIButtonProps>
->(({ elementType, children, buttonProps, className, type }) =>
-  React.createElement(
-    elementType as string,
-    {
-      ...buttonProps,
-      type: elementType === 'button' ? type : undefined,
-      className,
+const ButtonWrapper = (
+  props: SamuraiUIButtonProps &
+    SamuraiUIInteractionProps & {
+      buttonProps: any
     },
-    children
+  ref?: React.RefObject<HTMLElement>
+) => {
+  const { buttonProps, className, children, type } = props
+  return (
+    <props.elementType
+      ref={ref}
+      type={props.elementType === 'button' ? type : undefined}
+      className={className}
+      {...buttonProps}
+    >
+      {children}
+    </props.elementType>
   )
-)`
+}
+
+export const StyledButton = styled(React.forwardRef(ButtonWrapper))`
   ${buttonCss}
 `

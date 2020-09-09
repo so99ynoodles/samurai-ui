@@ -1,0 +1,98 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import { Button } from '../index'
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+### default
+
+<Preview withToolbar>
+  <Story name="default">
+    <Button marginEnd="size:004">default</Button>
+    <Button isDisabled>disabled</Button>
+  </Story>
+</Preview>
+
+### buttonColor
+
+<Preview withToolbar>
+  <Story name="buttonColor">
+    <Button marginEnd="size:004" buttonColor="red">
+      red
+    </Button>
+    <Button marginEnd="size:004" buttonColor="yellow">
+      yellow
+    </Button>
+    <Button marginEnd="size:004" buttonColor="orange">
+      orange
+    </Button>
+    <Button marginEnd="size:004" buttonColor="green">
+      green
+    </Button>
+    <Button marginEnd="size:004" buttonColor="indigo">
+      indigo
+    </Button>
+    <Button marginEnd="size:004" buttonColor="teal">
+      teal
+    </Button>
+    <Button marginEnd="size:004" buttonColor="blue">
+      blue
+    </Button>
+    <Button marginEnd="size:004" buttonColor="purple">
+      purple
+    </Button>
+    <Button marginEnd="size:004" buttonColor="pink">
+      pink
+    </Button>
+  </Story>
+</Preview>
+
+### vivid
+
+<Preview withToolbar>
+  <Story name="vivid">
+    <Button vivid marginEnd="size:004" buttonColor="red">
+      red
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="yellow">
+      yellow
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="orange">
+      orange
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="green">
+      green
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="indigo">
+      indigo
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="teal">
+      teal
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="blue">
+      blue
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="purple">
+      purple
+    </Button>
+    <Button vivid marginEnd="size:004" buttonColor="pink">
+      pink
+    </Button>
+  </Story>
+</Preview>
+
+### fluid
+
+<Preview withToolbar>
+  <Story name="fluid">
+    <Button marginEnd="size:004" fluid>
+      fluid
+    </Button>
+    <Button>default</Button>
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={Button} />

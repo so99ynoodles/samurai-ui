@@ -1,12 +1,8 @@
 import { PressProps, HoverProps } from '@react-aria/interactions'
-import { ReactNode, JSXElementConstructor } from 'react'
+import { ReactNode } from 'react'
 import {
   SamuraiUIPaddingProps,
   SamuraiUIComponentProps,
-  SamuraiUIColorTypes,
-  RadiusTypes,
-  TypographySizeTypes,
-  TypographyColorTypes,
   SamuraiUITextProps,
 } from '../../shared'
 
@@ -20,4 +16,13 @@ export interface SamuraiUIContainerProps
     PressProps,
     HoverProps {
   children?: ReactNode
+  elementType?:
+    | 'div'
+    | 'nav'
+    | 'section'
+    | 'main'
+    | 'article'
+    | 'span'
+    | 'header'
+    | 'footer'
 }

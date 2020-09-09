@@ -5,7 +5,10 @@ import { mergeProps } from '@react-aria/utils'
 import { SamuraiUIButtonProps } from '../../types'
 import { StyledButton } from './styled'
 
-export function Button(props: SamuraiUIButtonProps) {
+function Button(
+  props: SamuraiUIButtonProps,
+  ref?: React.RefObject<HTMLElement>
+) {
   const {
     children,
     className,
@@ -13,13 +16,14 @@ export function Button(props: SamuraiUIButtonProps) {
     autoFocus,
     ...otherProps
   } = props
-  const buttonRef = React.useRef<HTMLElement>(null)
+  const buttonRef = ref || React.useRef<HTMLElement>(null)
   const { buttonProps, isPressed } = useButton(props, buttonRef)
   const { isHovered, hoverProps } = useHover(props)
 
   return (
     <StyledButton
       {...otherProps}
+      ref={buttonRef}
       buttonProps={{ ...mergeProps(buttonProps, hoverProps), autoFocus }}
       isPressed={isPressed}
       isHovered={isHovered}
@@ -30,3 +34,7 @@ export function Button(props: SamuraiUIButtonProps) {
     </StyledButton>
   )
 }
+
+const _Button = React.forwardRef(Button)
+
+export { _Button as Button }

@@ -1,13 +1,17 @@
-import styled from 'styled-components'
-import { SamuraiUITextFieldProps } from '../../types'
-import { resolveComponentProps, resolveColors } from '../../utils'
+import styled, { css } from 'styled-components'
+import {
+  SamuraiUITextFieldProps,
+  SamuraiUITextFieldInputProps,
+  SamuraiUITextFieldLabelProps,
+} from '../../types'
+import { resolveComponentProps } from '../../utils'
 
-export const StyledLabel = styled.label`
+export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
   font-size: ${({ theme }) => theme.typography.sizes.min};
   color: ${({ theme }) => theme.typography.colors['text:default']};
 `
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};
   color: ${({ theme }) => theme.typography.colors['text:default']};
   padding: ${({ theme }) =>
@@ -15,6 +19,12 @@ export const StyledInput = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radius.small};
   flex-grow: 1;
+
+  ${({ isHovered }) =>
+    isHovered &&
+    css`
+      box-shadow: ${({ theme }) => theme.shadows.medium};
+    `}
 
   &:placeholder {
     color: ${({ theme }) => theme.typography.colors['text:help']};

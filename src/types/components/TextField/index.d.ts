@@ -19,3 +19,9 @@ export interface SamuraiUITextFieldProps
   placeholder?: string
   autoFocus?: boolean
 }
+
+export interface SamuraiUITextFieldInputProps {
+  isHovered?: boolean
+}
+
+export interface SamuraiUITextFieldLabelProps {}

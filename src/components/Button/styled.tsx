@@ -50,7 +50,6 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   ${({ isHovered, theme, buttonColor, vivid }) =>
     isHovered &&
     css`
-      color: ${theme.palette.white};
       background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
           ? theme.palette[buttonColor!].strong
@@ -61,7 +60,6 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   ${({ isPressed, theme, buttonColor, vivid }) =>
     isPressed &&
     css`
-      color: ${theme.palette.white};
       background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
           ? theme.palette[buttonColor!].deep
@@ -74,7 +72,7 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
       color: ${theme.typography.colors['text:disabled']};
       background-color: ${isSamuraiUIColors(buttonColor)
         ? theme.palette[buttonColor!].pale
-        : theme.palette.white};
+        : theme.colors.background};
     `}
     ${(props) => resolveComponentProps(props.theme, props)};
 `

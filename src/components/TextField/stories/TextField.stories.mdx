@@ -1,0 +1,52 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import { TextField } from '../index'
+
+<Meta title="TextField" component={TextField} />
+
+# TextField
+
+### default
+
+<Preview withToolbar>
+  <Story name="default">
+    <TextField
+      marginBottom="size:008"
+      labelPosition="top"
+      label="Email"
+      placeholder="Your Email"
+      type="email"
+    />
+    <TextField
+      marginBottom="size:008"
+      labelPosition="top"
+      label="First Name"
+      placeholder="First Name"
+      type="text"
+    />
+    <TextField
+      marginBottom="size:008"
+      labelPosition="top"
+      label="Last Name"
+      placeholder="Last Name"
+      type="text"
+    />
+    <TextField
+      marginBottom="size:008"
+      labelPosition="side"
+      label="Password"
+      placeholder="Your Password"
+      type="password"
+    />
+    <TextField
+      marginBottom="size:008"
+      labelPosition="side"
+      label="Confirm Password"
+      placeholder="Password Confirmation"
+      type="password"
+    />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={TextField} />

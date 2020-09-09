@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "@react-aria/button": "^3.2.1",
+    "@react-aria/textfield": "^3.2.0",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

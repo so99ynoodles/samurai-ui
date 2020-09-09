@@ -2108,6 +2108,45 @@
     "@react-aria/utils" "^3.2.0"
     "@react-types/shared" "^3.2.0"
 
+"@react-aria/label@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/label/-/label-3.1.0.tgz#ca9acd8e338cd37e52d4b85f84daeb2e5c49f47f"
+  integrity sha512-/Mr64BoltKKROlfAtY2V9xRA3IXCN0j9ex7C3U7bNuWsNn+wCKETbBUVgkjQHPwUFwy+33Usq3AW+Da3xKutCw==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/utils" "^3.1.0"
+    "@react-types/label" "^3.1.0"
+    "@react-types/shared" "^3.1.0"
+
+"@react-aria/ssr@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/ssr/-/ssr-3.0.0.tgz#6e31ac63f2ee3f6b706ef6ffc72858114b19c2ca"
+  integrity sha512-io9JKsc2Op4npPW5mqAEewA3KmOaV4+B4DA6PRFYLQI8DN83XuxTN8NFFmCCwPbqzQcPoT/y3c//Vx6tX3XM8w==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+
+"@react-aria/textfield@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/textfield/-/textfield-3.2.0.tgz#b4e1ec8593526c598376d6a864008aa48c1e50f0"
+  integrity sha512-+fcvGXJ//FYKfQP5GLfL1qnBX0+uDNigklTD9KgR21w11ddROLJxWCZ9AMmYmkGbx1mtfM8tb69y/T4BnsgbdA==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/focus" "^3.2.0"
+    "@react-aria/label" "^3.1.0"
+    "@react-aria/utils" "^3.2.0"
+    "@react-types/shared" "^3.2.0"
+    "@react-types/textfield" "^3.2.0"
+
+"@react-aria/utils@^3.1.0":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.2.1.tgz#9242308ee9f1106a6bd9cb3af8702bf6528d110a"
+  integrity sha512-6Kto7wg2Wd6C2AeRxMxtYLIEigqscLhVxeeLQCiH+w4x3St72lZIH6p6zn+NVUIybkHE5p4ipfYUdhKJexFNxQ==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/ssr" "^3.0.0"
+    "@react-types/shared" "^3.2.0"
+    clsx "^1.1.1"
+
 "@react-aria/utils@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.2.0.tgz#67d39dbba9d96612b4f9b3fe5c3243db4196b6f2"
@@ -2148,10 +2187,24 @@
   dependencies:
     "@react-types/shared" "^3.1.0"
 
+"@react-types/label@^3.1.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-types/label/-/label-3.2.0.tgz#b0829792b8d74aa3d5b2bc21ae68c53e4e1f1728"
+  integrity sha512-bEfbzp0LvtA5eIA4QCa5UtJMoTKphKRLUnjxqVOFAtEVmI5jJ9CIMwbemSEvGO3uLFpQ4ocvn66HYIZQr0K/BQ==
+  dependencies:
+    "@react-types/shared" "^3.2.0"
+
 "@react-types/shared@^3.1.0", "@react-types/shared@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.2.0.tgz#531c320e6b8f01f614336c14cee50ecf9fca4a4d"
   integrity sha512-0oVULza+qc8+j7I9OB74FVjbrH6JzUAYDAkTYXbsaPt/w4quAlgd4ADy9yxIVYyN1GCXp/z0AUuocaYDHA8O6Q==
+
+"@react-types/textfield@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-types/textfield/-/textfield-3.2.0.tgz#da609c90bf093f554ae4721c51458ca350ad00e6"
+  integrity sha512-XRa3TqNbdXUdZdLxK+vpPmxXlY1Fd2q5vOtmcEtFcO1n7LKX7tOKg1Evd5uOu+VQcEdUU9bh/rYFJP1bgNrJUA==
+  dependencies:
+    "@react-types/shared" "^3.2.0"
 
 "@rollup/plugin-commonjs@^15.0.0":
   version "15.0.0"

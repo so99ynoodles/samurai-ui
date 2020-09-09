@@ -8,8 +8,6 @@ import { AriaTextFieldOptions } from '@react-aria/textfield'
 export interface SamuraiUITextFieldStyleProps extends SamuraiUITextProps {
   labelPosition?: 'top' | 'side'
   outlineColor?: SamuraiUIColorTypes
-  fluid?: boolean
-  vivid?: boolean
 }
 export interface SamuraiUITextFieldProps
   extends SamuraiUIComponentProps,

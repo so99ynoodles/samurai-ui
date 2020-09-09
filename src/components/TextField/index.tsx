@@ -22,7 +22,11 @@ function TextField(
   return (
     <TextFieldWrapper {...otherProps}>
       {label && <StyledLabel {...labelProps}>{label}</StyledLabel>}
-      <StyledInput {...inputProps} placeholder={placeholder} />
+      <StyledInput
+        {...inputProps}
+        autoFocus={autoFocus}
+        placeholder={placeholder}
+      />
     </TextFieldWrapper>
   )
 }

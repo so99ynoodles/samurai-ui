@@ -14,6 +14,7 @@ export const StyledInput = styled.input`
     `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radius.small};
+  flex-grow: 1;
 
   &:placeholder {
     color: ${({ theme }) => theme.typography.colors['text:help']};

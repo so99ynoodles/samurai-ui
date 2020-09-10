@@ -1,6 +1,6 @@
 import React from 'react'
 import { mergeProps } from '@react-aria/utils'
-import { usePress, useHover } from '@react-aria/interactions'
+import { useHover } from '@react-aria/interactions'
 import { SamuraiUIContainerProps } from '../../types'
 import { StyledContainer } from './styled'
 
@@ -10,14 +10,13 @@ function Container(
 ) {
   const { children, elementType = 'div' } = props
   const containerRef = ref || React.useRef<HTMLDivElement>(null)
-  const { pressProps } = usePress({ ref: containerRef })
   const { hoverProps } = useHover(props)
   return (
     <StyledContainer
       {...props}
       ref={containerRef}
       elementType={elementType}
-      containerProps={{ ...mergeProps(pressProps, hoverProps) }}
+      containerProps={{ ...hoverProps }}
     >
       {children}
     </StyledContainer>

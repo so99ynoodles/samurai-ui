@@ -4,16 +4,15 @@ import { storiesOf } from '@storybook/react'
 import { Container } from '..'
 
 storiesOf('Container', module)
-  .add('default', () => (
-    <Container onPress={action('onPress')}>Container</Container>
-  ))
+  .add('default', () => <Container>Container</Container>)
   .add('textColor and textSize', () => (
     <Container textColor="text:default" textSize="max" padding="size:016">
       Hello World!
     </Container>
   ))
-  .add('textAlign', () => (
-    <Container textAlign="center" onPress={action('onPress')}>
+  .add('textAlign', () => <Container textAlign="center">Container</Container>)
+  .add('backgroundColor', () => (
+    <Container backgroundColor="indigo" userSelect="none">
       Container
     </Container>
   ))

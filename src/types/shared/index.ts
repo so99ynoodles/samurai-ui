@@ -248,6 +248,8 @@ export type Cursor =
   | 'zoom-in'
   | 'zoom-out'
 
+export type UserSelect = 'none' | 'auto' | 'text' | 'contain' | 'all'
+
 export interface SamuraiUILayoutProps {
   flex?: string | string[]
   flexGrow?: number | number[]
@@ -295,6 +297,7 @@ export interface SamuraiUIDisplayProps {
   boxShadow?: ShadowTypes | ShadowTypes[]
   hide?: BreakpointTypes[] | boolean
   show?: BreakpointTypes[] | boolean
+  userSelect?: UserSelect | UserSelect[]
 }
 
 export type SamuraiUIColorTypes =

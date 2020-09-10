@@ -1,9 +1,19 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { SamuraiUIContainerProps, SamuraiUIInteractionProps } from '../../types'
-import { resolveComponentProps } from '../../utils'
+import {
+  resolveComponentProps,
+  resolveColors,
+  isSamuraiUIColors,
+} from '../../utils'
 
 const containerCss = css<SamuraiUIContainerProps>`
+  background-color: ${({ theme, backgroundColor, vivid }) =>
+    isSamuraiUIColors(backgroundColor)
+      ? vivid
+        ? theme.palette[backgroundColor].vivid
+        : theme.palette[backgroundColor].soft
+      : theme.colors.background};
   ${(props) => resolveComponentProps(props.theme, props)};
 `
 

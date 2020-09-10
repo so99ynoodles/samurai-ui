@@ -175,6 +175,7 @@ export function resolveComponentProps(
         props.boxShadow,
         resolveShadow
       )};
+      ${resolveResponsiveProps('user-select', theme, props.userSelect)};
 
       ${resolveHide(theme, props.hide)}
       ${resolveShow(theme, props.show)}

@@ -1,14 +1,28 @@
 import { ShadowTypes } from '../../types'
+import { hexToRgba } from '../../utils/hexToRgba'
 
 export const shadows: {
-  [key in ShadowTypes]: string
+  [key in ShadowTypes]: (color?: string) => string
 } = {
-  none: 'none',
-  small: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-  medium:
-    '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-  large:
-    '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-  max:
-    ' 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+  none: () => `none`,
+  small: (color) =>
+    `0 2px 6px -1px ${hexToRgba(color, 0.3)}, 0 2px 4px -1px ${hexToRgba(
+      color,
+      0.06
+    )}`,
+  medium: (color) =>
+    `0 8px 8px -3px  ${hexToRgba(color, 0.3)}, 0 4px 6px -2px ${hexToRgba(
+      color,
+      0.05
+    )}`,
+  large: (color) =>
+    ` 0 16px 16px -5px ${hexToRgba(color, 0.3)}, 0 6px 8px -3px ${hexToRgba(
+      color,
+      0.04
+    )}`,
+  max: (color) =>
+    ` 0 20px 20px -7px ${hexToRgba(color, 0.3)}, 0 8px 10px -5px ${hexToRgba(
+      color,
+      0.04
+    )}`,
 }

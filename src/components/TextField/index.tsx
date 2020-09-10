@@ -16,6 +16,7 @@ function TextField(
     placeholder,
     onChange,
     type,
+    borderColor,
     ...otherProps
   } = props
   const textFieldRef = ref || React.useRef<HTMLInputElement>(null)
@@ -30,6 +31,7 @@ function TextField(
         isHovered={isHovered}
         autoFocus={autoFocus}
         placeholder={placeholder}
+        borderColor={borderColor}
       />
     </TextFieldWrapper>
   )

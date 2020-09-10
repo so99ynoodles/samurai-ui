@@ -8,6 +8,7 @@ import { AriaTextFieldOptions } from '@react-aria/textfield'
 export interface SamuraiUITextFieldStyleProps extends SamuraiUITextProps {
   labelPosition?: 'top' | 'side'
   outlineColor?: SamuraiUIColorTypes
+  borderColor?: SamuraiUIColorTypes
 }
 export interface SamuraiUITextFieldProps
   extends SamuraiUIComponentProps,
@@ -18,10 +19,14 @@ export interface SamuraiUITextFieldProps
   label?: string
   placeholder?: string
   autoFocus?: boolean
+  borderColor?: SamuraiUIColorTypes
 }
 
 export interface SamuraiUITextFieldInputProps {
   isHovered?: boolean
+  outlineColor?: SamuraiUIColorTypes
+  borderColor?: SamuraiUIColorTypes
+  vivid?: boolean
 }
 
 export interface SamuraiUITextFieldLabelProps {}

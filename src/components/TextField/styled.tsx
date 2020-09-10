@@ -4,7 +4,11 @@ import {
   SamuraiUITextFieldInputProps,
   SamuraiUITextFieldLabelProps,
 } from '../../types'
-import { resolveComponentProps } from '../../utils'
+import {
+  resolveComponentProps,
+  resolveColors,
+  isSamuraiUIColors,
+} from '../../utils'
 
 export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
   font-size: ${({ theme }) => theme.typography.sizes.min};
@@ -16,15 +20,38 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   color: ${({ theme }) => theme.typography.colors['text:default']};
   padding: ${({ theme }) =>
     `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radius.small};
+  border: ${({ theme, borderColor, vivid }) =>
+    isSamuraiUIColors(borderColor)
+      ? vivid
+        ? `1px solid ${theme.palette[borderColor].vivid};`
+        : `1px solid ${theme.palette[borderColor].soft};`
+      : `1px solid ${borderColor || theme.palette.white};`}
+  box-shadow: ${({ theme, borderColor, vivid }) =>
+    isSamuraiUIColors(borderColor)
+      ? vivid
+        ? theme.shadows.small(theme.palette[borderColor].vivid)
+        : theme.shadows.small(theme.palette[borderColor].soft)
+      : theme.shadows.small()};
+  transition: all 0.2s;
   flex-grow: 1;
 
-  ${({ isHovered }) =>
+  ${({ isHovered, theme, borderColor, vivid }) =>
     isHovered &&
     css`
-      box-shadow: ${({ theme }) => theme.shadows.medium};
+      box-shadow: ${isSamuraiUIColors(borderColor)
+        ? vivid
+          ? theme.shadows.medium(theme.palette[borderColor].vivid)
+          : theme.shadows.medium(theme.palette[borderColor].soft)
+        : theme.shadows.medium()};
     `}
+
+  outline-color: ${({ theme, borderColor, vivid }) =>
+    isSamuraiUIColors(borderColor)
+      ? vivid
+        ? theme.palette[borderColor!].vivid
+        : theme.palette[borderColor!].soft
+      : theme.colors.outline};
+  outline-radius: 0;
 
   &:placeholder {
     color: ${({ theme }) => theme.typography.colors['text:help']};

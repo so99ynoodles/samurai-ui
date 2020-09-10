@@ -12,7 +12,7 @@ import {
 export type Theme = {
   palette: PaletteTypes
   shadows: {
-    [key in ShadowTypes]: string
+    [key in ShadowTypes]: (color?: string) => string
   }
   colors: {
     [key in ThemeColorTypes]: string

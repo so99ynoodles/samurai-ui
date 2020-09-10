@@ -25,17 +25,13 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
         theme,
         radius,
         (theme: Theme, radius: RadiusTypes) => theme.radius[radius] || radius,
-        theme.radius.small
+        theme.radius.none
       )}
     `}
-
-  border: 1px solid
-    ${({ theme, buttonColor, vivid }) =>
-    isSamuraiUIColors(buttonColor)
-      ? vivid
-        ? theme.palette[buttonColor!].deep
-        : theme.palette[buttonColor!].dull
-      : theme.colors.border};
+  transition: all 0.2s;
+  border: 0;
+  box-shadow: ${({ theme, buttonColor }) =>
+    theme.shadows.small(theme.palette[buttonColor!]?.vivid)};
   color: ${({ theme, buttonColor }) =>
     isSamuraiUIColors(buttonColor)
       ? theme.palette.white
@@ -43,30 +39,37 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   background-color: ${({ theme, buttonColor, vivid }) =>
     isSamuraiUIColors(buttonColor)
       ? vivid
-        ? theme.palette[buttonColor!].bright
-        : theme.palette[buttonColor!].light
+        ? theme.palette[buttonColor!].vivid
+        : theme.palette[buttonColor!].soft
       : theme.colors.background};
-  outline-color: ${({ theme }) => theme.colors.outline};
+  outline-color: ${({ theme, buttonColor, vivid }) =>
+    isSamuraiUIColors(buttonColor)
+      ? vivid
+        ? theme.palette[buttonColor!].vivid
+        : theme.palette[buttonColor!].soft
+      : theme.colors.outline};
+  outline-radius: 0;
+  outline-offset: 4px;
   ${({ isHovered, theme, buttonColor, vivid }) =>
     isHovered &&
     css`
       background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
-          ? theme.palette[buttonColor!].strong
-          : theme.palette[buttonColor!].soft
+          ? theme.palette[buttonColor!].bright
+          : theme.palette[buttonColor!].light
         : theme.colors['background:hover']};
-      box-shadow: ${theme.shadows.medium};
+      box-shadow: ${theme.shadows.medium(theme.palette[buttonColor!]?.vivid)};
     `}
   ${({ isPressed, theme, buttonColor, vivid }) =>
     isPressed &&
     css`
       background-color: ${isSamuraiUIColors(buttonColor)
         ? vivid
-          ? theme.palette[buttonColor!].deep
+          ? theme.palette[buttonColor!].strong
           : theme.palette[buttonColor!].dull
         : theme.colors['background:active']};
     `}
-  ${({ isDisabled, theme, buttonColor }) =>
+    ${({ isDisabled, theme, buttonColor }) =>
     isDisabled &&
     css`
       color: ${theme.typography.colors['text:disabled']};

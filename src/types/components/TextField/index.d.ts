@@ -29,4 +29,6 @@ export interface SamuraiUITextFieldInputProps {
   vivid?: boolean
 }
 
-export interface SamuraiUITextFieldLabelProps {}
+export interface SamuraiUITextFieldLabelProps {
+  isRequired?: boolean
+}

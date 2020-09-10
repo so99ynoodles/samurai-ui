@@ -17,6 +17,7 @@ function TextField(
     onChange,
     type,
     borderColor,
+    isRequired,
     ...otherProps
   } = props
   const textFieldRef = ref || React.useRef<HTMLInputElement>(null)
@@ -25,7 +26,11 @@ function TextField(
 
   return (
     <TextFieldWrapper {...otherProps}>
-      {label && <StyledLabel {...labelProps}>{label}</StyledLabel>}
+      {label && (
+        <StyledLabel {...labelProps} isRequired={isRequired}>
+          {label}
+        </StyledLabel>
+      )}
       <StyledInput
         {...mergeProps(inputProps, hoverProps)}
         isHovered={isHovered}

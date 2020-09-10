@@ -4,15 +4,20 @@ import {
   SamuraiUITextFieldInputProps,
   SamuraiUITextFieldLabelProps,
 } from '../../types'
-import {
-  resolveComponentProps,
-  resolveColors,
-  isSamuraiUIColors,
-} from '../../utils'
+import { resolveComponentProps, isSamuraiUIColors } from '../../utils'
 
 export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
   font-size: ${({ theme }) => theme.typography.sizes.min};
   color: ${({ theme }) => theme.typography.colors['text:default']};
+
+  ${({ isRequired }) =>
+    isRequired &&
+    css`
+      &::after {
+        content: '*';
+        color: ${({ theme }) => theme.typography.colors['text:error']};
+      }
+    `}
 `
 
 export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
@@ -25,7 +30,7 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
       ? vivid
         ? `1px solid ${theme.palette[borderColor].vivid};`
         : `1px solid ${theme.palette[borderColor].soft};`
-      : `1px solid ${borderColor || theme.palette.white};`}
+      : `1px solid ${borderColor || theme.colors.background};`}
   box-shadow: ${({ theme, borderColor, vivid }) =>
     isSamuraiUIColors(borderColor)
       ? vivid

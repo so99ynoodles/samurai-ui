@@ -14,6 +14,134 @@ export const palette = {
   'gray-900': '#1A202C',
 
   /** red */
+  'red-lightGray': '#c0abaa',
+  'red-gray': '#745c5c',
+  'red-darkGray': '#3e2d30',
+  'red-pale': '#e8c2bf',
+  'red-light': '#f19896',
+  'red-soft': '#ca8281',
+  'red-dull': '#a35a5c',
+  'red-dark': '#692934',
+  'red-bright': '#ef6c70',
+  'red-strong': '#c53f4d',
+  'red-deep': '#a61d39',
+  'red-vivid': '#d02f48',
+
+  /** orange */
+  'orange-lightGray': '#cebba8',
+  'orange-gray': '#806c5c',
+  'orange-darkGray': '#4a3c32',
+  'orange-pale': '#f4d4b0',
+  'orange-light': '#ffbe71',
+  'orange-soft': '#dba66b',
+  'orange-dull': '#b37f46',
+  'orange-dark': '#794d1c',
+  'orange-bright': '#ffad36',
+  'orange-strong': '#e19215',
+  'orange-deep': '#b16c00',
+  'orange-vivid': '#f49d00',
+
+  /** yellow */
+  'yellow-lightGray': '#c6bea1',
+  'yellow-gray': '#786f57',
+  'yellow-darkGray': '#443e30',
+  'yellow-pale': '#f2e6b8',
+  'yellow-light': '#f2d96e',
+  'yellow-soft': '#d3bd6c',
+  'yellow-dull': '#ab9446',
+  'yellow-dark': '#74601f',
+  'yellow-bright': '#fad831',
+  'yellow-strong': '#debc03',
+  'yellow-deep': '#b39300',
+  'yellow-vivid': '#eec900',
+
+  /** green */
+  'green-lightGray': '#9db6a5',
+  'green-gray': '#53665a',
+  'green-darkGray': '#2a342e',
+  'green-pale': '#aed4b9',
+  'green-light': '#85ce9e',
+  'green-soft': '#76b18a',
+  'green-dull': '#4f8766',
+  'green-dark': '#23523a',
+  'green-bright': '#41b879',
+  'green-strong': '#008f56',
+  'green-deep': '#007243',
+  'green-vivid': '#00a15a',
+
+  /** teal */
+  'teal-lightGray': '#98b6b1',
+  'teal-gray': '#4e6764',
+  'teal-darkGray': '#273434',
+  'teal-pale': '#a6d4cc',
+  'teal-light': '#62c0b5',
+  'teal-soft': '#54a39b',
+  'teal-dull': '#2a7b76',
+  'teal-dark': '#004746',
+  'teal-bright': '#00aa9f',
+  'teal-strong': '#00827c',
+  'teal-deep': '#006664',
+  'teal-vivid': '#00857f',
+
+  /** blue */
+  'blue-lightGray': '#9ba5af',
+  'blue-gray': '#4c5765',
+  'blue-darkGray': '#222933',
+  'blue-pale': '#afc0d1',
+  'blue-light': '#6c9ac5',
+  'blue-soft': '#5d7ea0',
+  'blue-dull': '#34597d',
+  'blue-dark': '#123452',
+  'blue-bright': '#2981c0',
+  'blue-strong': '#005b9b',
+  'blue-deep': '#004280',
+  'blue-vivid': '#005ba5',
+
+  /** indigo */
+  'indigo-lightGray': '#a2a2af',
+  'indigo-gray': '#565566',
+  'indigo-darkGray': '#292734',
+  'indigo-pale': '#bbbdd0',
+  'indigo-light': '#9091c3',
+  'indigo-soft': '#7878a0',
+  'indigo-dull': '#54527c',
+  'indigo-dark': '#322d51',
+  'indigo-bright': '#7574bc',
+  'indigo-strong': '#534c98',
+  'indigo-deep': '#3e337b',
+  'indigo-vivid': '#534aa0',
+
+  /** purple */
+  'purple-lightGray': '#aba0ab',
+  'purple-gray': '#605262',
+  'purple-darkGray': '#302531',
+  'purple-pale': '#c8b9c9',
+  'purple-light': '#b088b5',
+  'purple-soft': '#907194',
+  'purple-dull': '#6c4a71',
+  'purple-dark': '#432848',
+  'purple-bright': '#a165a8',
+  'purple-strong': '#7c3d84',
+  'purple-deep': '#612469',
+  'purple-vivid': '#81378a',
+
+  /** pink */
+  'pink-lightGray': '#bdacb0',
+  'pink-gray': '#725c63',
+  'pink-darkGray': '#3d2e34',
+  'pink-pale': '#dec4ca',
+  'pink-light': '#d98ea5',
+  'pink-soft': '#b4788b',
+  'pink-dull': '#8b4f65',
+  'pink-dark': '#612d46',
+  'pink-bright': '#d0678e',
+  'pink-strong': '#a33c6a',
+  'pink-deep': '#861d55',
+  'pink-vivid': '#ad2e6c',
+}
+
+export const SamuraiUIColors = {
+  /** red */
   red: {
     lightGray: '#c0abaa',
     gray: '#745c5c',
@@ -61,8 +189,7 @@ export const palette = {
     vivid: '#eec900',
   },
 
-  /** green */
-  green: {
+  /** green */ green: {
     lightGray: '#9db6a5',
     gray: '#53665a',
     darkGray: '#2a342e',
@@ -77,8 +204,7 @@ export const palette = {
     vivid: '#00a15a',
   },
 
-  /** teal */
-  teal: {
+  /** teal */ teal: {
     lightGray: '#98b6b1',
     gray: '#4e6764',
     darkGray: '#273434',

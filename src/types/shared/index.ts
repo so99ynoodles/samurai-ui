@@ -2,6 +2,8 @@ import { palette } from '../../foundations/colors/palette'
 
 export type PaletteTypes = typeof palette
 
+export type SamuraiUIPaletteColorTypes = keyof PaletteTypes
+
 export type ThemeColorTypes =
   /** background color for html body */
   | 'body'

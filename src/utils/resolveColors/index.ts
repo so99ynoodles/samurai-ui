@@ -17,7 +17,7 @@ export function isSamuraiUIColors(color?: string) {
 }
 
 export function resolveColors(theme: Theme, color?: string) {
-  if (isSamuraiUIColors(color!)) {
+  if (theme.palette[color]) {
     return theme.palette[color as SamuraiUIColorTypes]
   }
   return color

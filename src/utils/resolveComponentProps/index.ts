@@ -31,15 +31,13 @@ export function resolveComponentProps(
       'font-size',
       theme,
       props.textSize,
-      resolveFontSize,
-      theme.typography.sizes.small
+      resolveFontSize
     )};
     ${resolveResponsiveProps(
       'line-height',
       theme,
       props.lineHeight,
-      resolveLineSize,
-      theme.typography.lineSizes.small
+      resolveLineSize
     )};
     font-weight: ${props.bold ? 'bold' : 'normal'};
     text-decoration: ${props.underline && 'underline'}

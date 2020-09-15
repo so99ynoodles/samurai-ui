@@ -95,6 +95,47 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
         box-shadow: none;
       `};
     `}
+
+    ${({ sizeVariant, theme }) => {
+    if (sizeVariant) {
+      switch (sizeVariant) {
+        case 'min':
+          return css`
+            font-size: ${theme.typography.sizes.min};
+            line-height: ${theme.typography.lineSizes.min};
+            padding: ${theme.spacing['size:004']} ${theme.spacing['size:008']};
+          `
+        case 'small':
+          return css`
+            font-size: ${theme.typography.sizes.small};
+            line-height: ${theme.typography.lineSizes.small};
+            padding: ${theme.spacing['size:004']} ${theme.spacing['size:008']};
+          `
+
+        case 'medium':
+          return css`
+            font-size: ${theme.typography.sizes.medium};
+            line-height: ${theme.typography.lineSizes.medium};
+            padding: ${theme.spacing['size:004']} ${theme.spacing['size:016']};
+          `
+        case 'large':
+          return css`
+            font-size: ${theme.typography.sizes.large};
+            line-height: ${theme.typography.lineSizes.large};
+            padding: ${theme.spacing['size:008']} ${theme.spacing['size:024']};
+          `
+
+        case 'max':
+          return css`
+            font-size: ${theme.typography.sizes.max};
+            line-height: ${theme.typography.lineSizes.max};
+            padding: ${theme.spacing['size:008']} ${theme.spacing['size:032']};
+          `
+        default:
+          return
+      }
+    }
+  }}
     ${(props) => resolveComponentProps(props.theme, props)};
 `
 

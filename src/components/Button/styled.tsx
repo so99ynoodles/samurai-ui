@@ -1,17 +1,23 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { resolveComponentProps, resolveResponsiveProps } from '../../utils'
-import { isSamuraiUIColors } from '../../utils/resolveColors'
+import {
+  resolveComponentProps,
+  resolveResponsiveProps,
+  resolveColors,
+  resolveSize,
+} from '../../utils'
 import {
   SamuraiUIButtonProps,
   SamuraiUIInteractionProps,
   Theme,
   RadiusTypes,
 } from '../../types'
+import { darken, lighten } from 'polished'
+import { SamuraiUIColors } from '../../foundations'
 
 const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};
-  line-height: ${({ theme }) => theme.typography.sizes.small};
+  line-height: ${({ theme }) => theme.typography.lineSizes.small};
   display: ${({ fluid }) => (fluid ? 'block' : 'inline-block')};
   width: ${({ fluid }) => (fluid ? '100%' : undefined)};
   cursor: ${(props) => props.cursor || 'default'};
@@ -29,53 +35,65 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
       )}
     `}
   transition: all 0.2s;
-  border: 0;
-  box-shadow: ${({ theme, buttonColor }) =>
-    theme.shadows.small(theme.palette[buttonColor!]?.vivid)};
-  color: ${({ theme, buttonColor }) =>
-    isSamuraiUIColors(buttonColor)
-      ? theme.palette.white
-      : theme.typography.colors['text:default']};
-  background-color: ${({ theme, buttonColor, vivid }) =>
-    isSamuraiUIColors(buttonColor)
-      ? vivid
-        ? theme.palette[buttonColor!].vivid
-        : theme.palette[buttonColor!].soft
-      : theme.colors.background};
-  outline-color: ${({ theme, buttonColor, vivid }) =>
-    isSamuraiUIColors(buttonColor)
-      ? vivid
-        ? theme.palette[buttonColor!].vivid
-        : theme.palette[buttonColor!].soft
-      : theme.colors.outline};
+  border: ${({ theme, borderWidth, borderColor }) =>
+    `${resolveSize(theme, borderWidth || 0)} solid ${resolveColors(
+      theme,
+      borderColor || theme.palette.white
+    )}`};
+  box-shadow: ${({ theme, shadowColor }) => theme.shadows.small(shadowColor)};
+  color: ${({ theme }) => theme.typography.colors['text:default']};
+  background-color: ${({ theme, backgroundColor }) =>
+    resolveColors(theme, backgroundColor) || theme.colors.background};
+  outline-color: ${({ theme, outlineColor }) =>
+    resolveColors(theme, outlineColor) || theme.colors.outline};
   outline-radius: 0;
   outline-offset: 4px;
-  ${({ isHovered, theme, buttonColor, vivid }) =>
+  ${({ isHovered, theme, backgroundColor, shadowColor }) =>
     isHovered &&
     css`
-      background-color: ${isSamuraiUIColors(buttonColor)
-        ? vivid
-          ? theme.palette[buttonColor!].bright
-          : theme.palette[buttonColor!].light
+      background-color: ${backgroundColor
+        ? lighten(0.1, resolveColors(theme, backgroundColor))
         : theme.colors['background:hover']};
-      box-shadow: ${theme.shadows.medium(theme.palette[buttonColor!]?.vivid)};
+      box-shadow: ${theme.shadows.medium(shadowColor)};
     `}
-  ${({ isPressed, theme, buttonColor, vivid }) =>
+  ${({ isPressed, theme, backgroundColor }) =>
     isPressed &&
     css`
-      background-color: ${isSamuraiUIColors(buttonColor)
-        ? vivid
-          ? theme.palette[buttonColor!].strong
-          : theme.palette[buttonColor!].dull
+      background-color: ${backgroundColor
+        ? darken(0.1, resolveColors(theme, backgroundColor))
         : theme.colors['background:active']};
     `}
-    ${({ isDisabled, theme, buttonColor }) =>
+    ${({ isDisabled, theme }) =>
     isDisabled &&
     css`
       color: ${theme.typography.colors['text:disabled']};
-      background-color: ${isSamuraiUIColors(buttonColor)
-        ? theme.palette[buttonColor!].pale
-        : theme.colors.background};
+      background-color: ${theme.colors.background};
+    `}
+
+    ${({ colorVariant, theme, isPressed, isHovered, isDisabled }) =>
+    colorVariant &&
+    css`
+      background-color: ${SamuraiUIColors[colorVariant].soft};
+      color: ${theme.palette.white};
+      box-shadow: ${theme.shadows.small(SamuraiUIColors[colorVariant].soft)};
+      outline-color: ${SamuraiUIColors[colorVariant].soft};
+      ${isHovered &&
+      css`
+        background-color: ${SamuraiUIColors[colorVariant].light};
+        box-shadow: ${theme.shadows.medium(SamuraiUIColors[colorVariant].soft)};
+        outline-color: ${SamuraiUIColors[colorVariant].light};
+      `}
+      ${isPressed &&
+      css`
+        background-color: ${SamuraiUIColors[colorVariant].dull};
+        box-shadow: ${theme.shadows.small(SamuraiUIColors[colorVariant].soft)};
+        outline-color: ${SamuraiUIColors[colorVariant].dull};
+      `}
+        ${isDisabled &&
+      css`
+        background-color: ${SamuraiUIColors[colorVariant].pale};
+        box-shadow: none;
+      `};
     `}
     ${(props) => resolveComponentProps(props.theme, props)};
 `

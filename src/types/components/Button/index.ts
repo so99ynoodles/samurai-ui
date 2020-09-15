@@ -1,20 +1,29 @@
 import { PressProps, HoverProps } from '@react-aria/interactions'
-import { ReactNode, JSXElementConstructor } from 'react'
+import { ReactNode } from 'react'
 import {
   SamuraiUIPaddingProps,
   SamuraiUIComponentProps,
   SamuraiUIColorTypes,
   SamuraiUITextProps,
   RadiusTypes,
+  SamuraiUIPaletteColorTypes,
+  SizeValue,
 } from '../../shared'
+
+type ButtonSizeTypes = 'min' | 'small' | 'medium' | 'large' | 'max'
 
 export interface SamuraiUIButtonStyleProps
   extends SamuraiUIPaddingProps,
     SamuraiUITextProps {
   radius?: RadiusTypes | RadiusTypes[]
-  buttonColor?: SamuraiUIColorTypes
+  borderWidth?: SizeValue
+  borderColor?: SamuraiUIPaletteColorTypes
+  backgroundColor?: SamuraiUIPaletteColorTypes
+  shadowColor?: SamuraiUIPaletteColorTypes
+  outlineColor?: SamuraiUIPaletteColorTypes
+  colorVariant?: SamuraiUIColorTypes
+  sizeVariant?: ButtonSizeTypes
   fluid?: boolean
-  vivid?: boolean
 }
 
 export interface SamuraiUIButtonProps

@@ -4,7 +4,11 @@ import {
   SamuraiUITextFieldInputProps,
   SamuraiUITextFieldLabelProps,
 } from '../../types'
-import { resolveComponentProps, isSamuraiUIColors } from '../../utils'
+import {
+  resolveComponentProps,
+  isSamuraiUIColors,
+  resolveColors,
+} from '../../utils'
 
 export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
   font-size: ${({ theme }) => theme.typography.sizes.min};
@@ -14,7 +18,7 @@ export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
     isRequired &&
     css`
       &::after {
-        content: '*';
+        content: ${typeof isRequired === 'string' ? isRequired : '*'};
         color: ${({ theme }) => theme.typography.colors['text:error']};
       }
     `}
@@ -25,37 +29,22 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   color: ${({ theme }) => theme.typography.colors['text:default']};
   padding: ${({ theme }) =>
     `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
-  border: ${({ theme, borderColor, vivid }) =>
-    isSamuraiUIColors(borderColor)
-      ? vivid
-        ? `1px solid ${theme.palette[borderColor].vivid};`
-        : `1px solid ${theme.palette[borderColor].soft};`
-      : `1px solid ${borderColor || theme.colors.background};`}
-  box-shadow: ${({ theme, borderColor, vivid }) =>
-    isSamuraiUIColors(borderColor)
-      ? vivid
-        ? theme.shadows.small(theme.palette[borderColor].vivid)
-        : theme.shadows.small(theme.palette[borderColor].soft)
-      : theme.shadows.small()};
+  border: ${({ theme, borderColor }) =>
+    `1px solid ${
+      resolveColors(theme, borderColor) || theme.colors.background
+    };`}
+  box-shadow: ${({ theme, shadowColor }) => theme.shadows.small(shadowColor)};
   transition: all 0.2s;
   flex-grow: 1;
 
-  ${({ isHovered, theme, borderColor, vivid }) =>
+  ${({ isHovered, theme, shadowColor }) =>
     isHovered &&
     css`
-      box-shadow: ${isSamuraiUIColors(borderColor)
-        ? vivid
-          ? theme.shadows.medium(theme.palette[borderColor].vivid)
-          : theme.shadows.medium(theme.palette[borderColor].soft)
-        : theme.shadows.medium()};
+      box-shadow: ${theme.shadows.medium(shadowColor)};
     `}
 
-  outline-color: ${({ theme, borderColor, vivid }) =>
-    isSamuraiUIColors(borderColor)
-      ? vivid
-        ? theme.palette[borderColor!].vivid
-        : theme.palette[borderColor!].soft
-      : theme.colors.outline};
+  outline-color: ${({ theme, outlineColor }) =>
+    resolveColors(theme, outlineColor) || theme.colors.outline};
   outline-radius: 0;
 
   &:placeholder {

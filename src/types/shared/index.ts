@@ -69,6 +69,7 @@ export interface SamuraiUITextProps {
   textColor?: TypographyColorValue | TypographyColorValue[]
   textSize?: TypographySizeValue | TypographySizeValue[]
   textAlign?: TextAlign | TextAlign[]
+  lineHeight?: TypographySizeValue | TypographySizeValue[]
   bold?: boolean
   lineThrough?: boolean
   italic?: boolean

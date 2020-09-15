@@ -7,6 +7,7 @@ import {
   ShadowTypes,
   ThemeColorTypes,
   BreakpointTypes,
+  TypographySizeValue,
 } from '../shared'
 
 export type Theme = {
@@ -26,6 +27,9 @@ export type Theme = {
     }
     sizes: {
       [key in TypographySizeTypes]: string
+    }
+    lineSizes: {
+      [key in TypographySizeValue]: string
     }
   }
   radius: {

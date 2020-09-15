@@ -6,6 +6,7 @@ import {
   typographySizes,
   sizes,
   palette,
+  lineSizes,
 } from '../../foundations'
 import { Theme } from '../../types'
 import { shadows } from '../../foundations/shadows'
@@ -18,6 +19,7 @@ export const darkTheme: Theme = {
   typography: {
     colors: typographyDarkColors,
     sizes: typographySizes,
+    lineSizes: lineSizes,
   },
   breakpoints,
   colors: darkColors,

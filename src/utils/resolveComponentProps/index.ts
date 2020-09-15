@@ -8,7 +8,11 @@ import {
 import { resolveSize } from '../resolveSize'
 import { resolveShadow } from '../resolveShadow'
 import { resolveHide, resolveShow } from '../resolveDisplay'
-import { resolveFontColors, resolveFontSize } from '../resolveTypography'
+import {
+  resolveFontColors,
+  resolveFontSize,
+  resolveLineSize,
+} from '../resolveTypography'
 import { resolveResponsiveProps } from '../resolveResponsiveProps'
 
 export function resolveComponentProps(
@@ -29,6 +33,13 @@ export function resolveComponentProps(
       props.textSize,
       resolveFontSize,
       theme.typography.sizes.small
+    )};
+    ${resolveResponsiveProps(
+      'line-height',
+      theme,
+      props.lineHeight,
+      resolveLineSize,
+      theme.typography.lineSizes.small
     )};
     font-weight: ${props.bold ? 'bold' : 'normal'};
     text-decoration: ${props.underline && 'underline'}

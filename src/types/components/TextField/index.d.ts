@@ -1,14 +1,17 @@
 import { HoverProps, FocusProps } from '@react-aria/interactions'
 import {
   SamuraiUIComponentProps,
-  SamuraiUIColorTypes,
+  SamuraiUIPaletteColorTypes,
   SamuraiUITextProps,
-} from '../../../../build/types/shared'
+  SamuraiUIColorTypes,
+  SizeValue,
+} from '../../shared'
 import { AriaTextFieldOptions } from '@react-aria/textfield'
+
 export interface SamuraiUITextFieldStyleProps extends SamuraiUITextProps {
   labelPosition?: 'top' | 'side'
-  outlineColor?: SamuraiUIColorTypes
-  borderColor?: SamuraiUIColorTypes
+  outlineColor?: SamuraiUIPaletteColorTypes
+  borderColor?: SamuraiUIPaletteColorTypes
 }
 export interface SamuraiUITextFieldProps
   extends SamuraiUIComponentProps,
@@ -19,16 +22,23 @@ export interface SamuraiUITextFieldProps
   label?: string
   placeholder?: string
   autoFocus?: boolean
-  borderColor?: SamuraiUIColorTypes
+  borderColor?: SamuraiUIPaletteColorTypes
+  borderWidth?: SizeValue | SizeValue[]
+  backgroundColor?: SamuraiUIPaletteColorTypes
+  shadowColor?: SamuraiUIPaletteColorTypes
+  colorVariant?: SamuraiUIColorTypes
 }
 
 export interface SamuraiUITextFieldInputProps {
   isHovered?: boolean
-  outlineColor?: SamuraiUIColorTypes
-  borderColor?: SamuraiUIColorTypes
+  outlineColor?: SamuraiUIPaletteColorTypes
+  borderColor?: SamuraiUIPaletteColorTypes
+  borderWidth?: SizeValue | SizeValue[]
+  backgroundColor?: SamuraiUIPaletteColorTypes
+  shadowColor?: SamuraiUIPaletteColorTypes
   vivid?: boolean
 }
 
 export interface SamuraiUITextFieldLabelProps {
-  isRequired?: boolean
+  isRequired?: boolean | string
 }

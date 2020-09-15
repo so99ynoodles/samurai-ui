@@ -4,13 +4,13 @@ import {
   SamuraiUIPaddingProps,
   SamuraiUIComponentProps,
   SamuraiUITextProps,
-  SamuraiUIColorTypes,
+  SamuraiUIPaletteColorTypes,
 } from '../../shared'
 
 export interface SamuraiUIContainerStyleProps
   extends SamuraiUIPaddingProps,
     SamuraiUITextProps {
-  backgroundColor?: SamuraiUIColorTypes
+  backgroundColor?: SamuraiUIPaletteColorTypes
   vivid?: boolean
 }
 

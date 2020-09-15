@@ -11,3 +11,9 @@ export function resolveFontSize(theme: Theme, size?: string) {
     ? theme.typography.sizes[size as TypographySizeTypes]
     : size
 }
+
+export function resolveLineSize(theme: Theme, size?: string) {
+  return theme.typography.lineSizes[size as TypographySizeTypes]
+    ? theme.typography.lineSizes[size as TypographySizeTypes]
+    : size
+}

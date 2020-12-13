@@ -1,4 +1,6 @@
-export const SamuraiUIColors = {
+export const palette = {
+  white: "#FFF",
+  black: "#131720",
   gray: {
     0: "#F9FAFB",
     100: '#F7FAFC',

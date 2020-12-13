@@ -23,6 +23,57 @@ export type ThemeColorTypes =
   /** outline color for focused */
   | 'outline'
 
+  export type DesignTokens = {
+    bodyColor: string,
+    backgroundColor: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    },
+    outlineColor: string,
+    borderColor: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    }
+    textColor: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    },
+    primary: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    },
+    secondary: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    },
+    tertiary: {
+      default: string
+      hover: string
+      active: string
+      focus: string
+      disabled: string
+    },
+    success: string
+    error: string
+    waring: string
+  }
+  
+
 export type SizeTypes =
   | 'size:min'
   | 'size:000'
@@ -305,10 +356,8 @@ export interface SamuraiUIDisplayProps {
 
 export type SamuraiUIColorTypes =
   | 'red'
-  | 'orange'
   | 'yellow'
   | 'green'
-  | 'teal'
   | 'blue'
   | 'indigo'
   | 'purple'

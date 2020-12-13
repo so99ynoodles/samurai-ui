@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { SamuraiUIColors } from '../../foundations'
 import {
   SamuraiUITextFieldProps,
   SamuraiUITextFieldInputProps,
@@ -30,14 +29,14 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
     `1px solid ${
       resolveColors(theme, borderColor) || theme.colors.background
     };`}
-  box-shadow: ${({ theme, shadowColor }) => theme.shadows.small(shadowColor)};
+  box-shadow: ${({ theme, shadowColor }) => theme.shadows.small(shadowColor || "none")};
   transition: all 0.2s;
   flex-grow: 1;
 
   ${({ isHovered, theme, shadowColor }) =>
     isHovered &&
     css`
-      box-shadow: ${theme.shadows.medium(shadowColor)};
+      box-shadow: ${theme.shadows.medium(shadowColor || "none")};
     `}
 
   outline-color: ${({ theme, outlineColor }) =>
@@ -51,19 +50,19 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   ${({ colorVariant, theme, isHovered, isDisabled }) =>
     colorVariant &&
     css`
-      border-color: ${SamuraiUIColors[colorVariant].soft};
+      border-color: ${theme.palette[colorVariant][300]};
       color: ${theme.palette.white};
-      box-shadow: ${theme.shadows.small(SamuraiUIColors[colorVariant].soft)};
-      outline-color: ${SamuraiUIColors[colorVariant].soft};
+      box-shadow: ${theme.shadows.small(theme.palette[colorVariant][300])};
+      outline-color: ${theme.palette[colorVariant][300]};
       ${isHovered &&
       css`
-        border-color: ${SamuraiUIColors[colorVariant].light};
-        box-shadow: ${theme.shadows.medium(SamuraiUIColors[colorVariant].soft)};
-        outline-color: ${SamuraiUIColors[colorVariant].light};
+        border-color: ${theme.palette[colorVariant][400]};
+        box-shadow: ${theme.shadows.medium(theme.palette[colorVariant][300])};
+        outline-color: ${theme.palette[colorVariant][400]};
       `}
       ${isDisabled &&
       css`
-        border-color: ${SamuraiUIColors[colorVariant].pale};
+        border-color: ${theme.palette[colorVariant][100]};
         box-shadow: none;
       `};
     `}

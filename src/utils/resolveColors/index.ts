@@ -5,20 +5,18 @@ const AVAILABLE_COLORS: SamuraiUIColorTypes[] = [
   'blue',
   'green',
   'indigo',
-  'orange',
   'pink',
   'purple',
   'yellow',
-  'teal',
 ]
 
 export function isSamuraiUIColors(color?: string) {
   return AVAILABLE_COLORS.includes(color as SamuraiUIColorTypes)
 }
 
-export function resolveColors(theme: Theme, color?: string) {
+export function resolveColors(theme: Theme, color?: string, number?: number) {
   if (theme.palette[color]) {
-    return theme.palette[color as SamuraiUIColorTypes]
+    return theme.palette[color as SamuraiUIColorTypes]?.[number]
   }
   return color
 }

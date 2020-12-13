@@ -12,22 +12,28 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-smoothing: auto;
   }
   body {
-    color: ${(props) => props.theme.typography.colors['text:default']};
-    background-color: ${(props) => props.theme.colors.body};
+    color: ${(props) => props.theme.palette.gray[900]};
+    background-color: ${(props) => props.theme.palette.white};
   }
 `
 
-interface ThemeProviderProps {
+interface ThemeProviderProps<T> {
   theme: Theme
+  generateToken?: (theme: Theme) => T
   children?: ReactNode
 }
 
-function ThemeProvider(props: ThemeProviderProps) {
-  const { theme, children } = props
+function ThemeProvider<T>(props: ThemeProviderProps<T>) {
+  const { theme, generateToken, children } = props
+  const themeWithToken = {
+    ...theme,
+    token: generateToken?.(theme)
+  }
   return (
-    <StyledThemeProvider theme={theme}>
+    <StyledThemeProvider theme={themeWithToken}>
       <GlobalStyle />
       {children}
     </StyledThemeProvider>

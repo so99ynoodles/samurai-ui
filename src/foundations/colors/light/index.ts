@@ -7,8 +7,8 @@ export const lightColors: {
 } = {
   body: palette.white,
   background: palette.white,
-  'background:hover': lighten(0.1, palette.white),
-  'background:active': darken(0.1, palette.white),
-  border: palette['gray-500'],
-  outline: palette['gray-500'],
+  'background:hover': palette.gray[300],
+  'background:active': palette.gray[500],
+  border: palette.gray[500],
+  outline: palette.gray[500],
 }

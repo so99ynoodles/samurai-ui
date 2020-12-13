@@ -68,6 +68,7 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
     css`
       color: ${theme.typography.colors['text:disabled']};
       background-color: ${theme.colors.background};
+      cursor: not-allowed;
     `}
 
     ${({ colorVariant, theme, isPressed, isHovered, isDisabled }) =>
@@ -93,6 +94,7 @@ const buttonCss = css<SamuraiUIButtonProps & SamuraiUIInteractionProps>`
       css`
         background-color: ${SamuraiUIColors[colorVariant].pale};
         box-shadow: none;
+        cursor: not-allowed;
       `};
     `}
 

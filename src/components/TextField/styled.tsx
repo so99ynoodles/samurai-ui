@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components'
+import { SamuraiUIColors } from '../../foundations'
 import {
   SamuraiUITextFieldProps,
   SamuraiUITextFieldInputProps,
   SamuraiUITextFieldLabelProps,
 } from '../../types'
-import {
-  resolveComponentProps,
-  isSamuraiUIColors,
-  resolveColors,
-} from '../../utils'
+import { resolveComponentProps, resolveColors } from '../../utils'
 
 export const StyledLabel = styled.label<SamuraiUITextFieldLabelProps>`
   font-size: ${({ theme }) => theme.typography.sizes.min};
@@ -50,6 +47,26 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   &:placeholder {
     color: ${({ theme }) => theme.typography.colors['text:help']};
   }
+
+  ${({ colorVariant, theme, isHovered, isDisabled }) =>
+    colorVariant &&
+    css`
+      border-color: ${SamuraiUIColors[colorVariant].soft};
+      color: ${theme.palette.white};
+      box-shadow: ${theme.shadows.small(SamuraiUIColors[colorVariant].soft)};
+      outline-color: ${SamuraiUIColors[colorVariant].soft};
+      ${isHovered &&
+      css`
+        border-color: ${SamuraiUIColors[colorVariant].light};
+        box-shadow: ${theme.shadows.medium(SamuraiUIColors[colorVariant].soft)};
+        outline-color: ${SamuraiUIColors[colorVariant].light};
+      `}
+      ${isDisabled &&
+      css`
+        border-color: ${SamuraiUIColors[colorVariant].pale};
+        box-shadow: none;
+      `};
+    `}
 `
 
 export const TextFieldWrapper = styled.div<SamuraiUITextFieldProps>`

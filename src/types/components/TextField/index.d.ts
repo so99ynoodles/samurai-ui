@@ -31,12 +31,13 @@ export interface SamuraiUITextFieldProps
 
 export interface SamuraiUITextFieldInputProps {
   isHovered?: boolean
+  isDisabled?: boolean
   outlineColor?: SamuraiUIPaletteColorTypes
   borderColor?: SamuraiUIPaletteColorTypes
   borderWidth?: SizeValue | SizeValue[]
   backgroundColor?: SamuraiUIPaletteColorTypes
   shadowColor?: SamuraiUIPaletteColorTypes
-  vivid?: boolean
+  colorVariant?: SamuraiUIColorTypes
 }
 
 export interface SamuraiUITextFieldLabelProps {

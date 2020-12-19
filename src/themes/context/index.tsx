@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     color: ${(props) => props.theme.palette.gray[900]};
-    background-color: ${(props) => props.theme.palette.white};
+    background-color: ${(props) => props.theme.palette.gray[200]};
   }
 `
 

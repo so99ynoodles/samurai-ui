@@ -24,7 +24,7 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   font-size: ${({ theme }) => theme.typography.sizes.small};
   color: ${({ theme }) => theme.typography.colors['text:default']};
   padding: ${({ theme }) =>
-    `${theme.spacing['size:004']} ${theme.spacing['size:008']}`};
+    `${theme.spacing['size:008']} ${theme.spacing['size:012']}`};
   border: ${({ theme, borderColor }) =>
     `1px solid ${
       resolveColors(theme, borderColor) || theme.colors.background
@@ -44,7 +44,7 @@ export const StyledInput = styled.input<SamuraiUITextFieldInputProps>`
   outline-radius: 0;
 
   &:placeholder {
-    color: ${({ theme }) => theme.typography.colors['text:help']};
+    color: ${({ theme }) => theme.palette.gray[200]};
   }
 
   ${({ colorVariant, theme, isHovered, isDisabled }) =>

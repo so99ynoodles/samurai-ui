@@ -1,4 +1,4 @@
-type Palette = {
+type Swatches = {
   50: string;
   100: string;
   200: string;
@@ -11,7 +11,7 @@ type Palette = {
   900: string;
 }
 
-export const REDS: Palette = {
+export const REDS: Swatches = {
   50: "#FFEEEE",
   100: "#FACDCD",
   200: "#F29B9B",
@@ -24,7 +24,7 @@ export const REDS: Palette = {
   900: "#610404",
 }
 
-export const ORANGES: Palette = {
+export const ORANGES: Swatches = {
   50: "#FFEFE6",
   100: "#FFD3BA",
   200: "#FAB38B",
@@ -37,7 +37,7 @@ export const ORANGES: Palette = {
   900: "#572508",
 }
 
-export const YELLOWS: Palette = {
+export const YELLOWS: Swatches = {
   50: "#FFFAEB",
   100: "#FCEFC7",
   200: "#F8E3A3",
@@ -50,7 +50,7 @@ export const YELLOWS: Palette = {
   900: "#513C06",
 }
 
-export const LIME_GREENS: Palette = {
+export const LIME_GREENS: Swatches = {
   50: "#F2FDE0",
   100: "#E2F7C2",
   200: "#C7EA8F",
@@ -63,7 +63,7 @@ export const LIME_GREENS: Palette = {
   900: "#2B4005",
 }
 
-export const GREENS: Palette = {
+export const GREENS: Swatches = {
   50: "#E3F9E5",
   100: "#C1EAC5",
   200: "#A3D9A5",
@@ -76,7 +76,7 @@ export const GREENS: Palette = {
   900: "#05400A",
 }
 
-export const TEALS: Palette = {
+export const TEALS: Swatches = {
   50: "#EFFCF6",
   100: "#C6F7E2",
   200: "#8EEDC7",
@@ -89,7 +89,7 @@ export const TEALS: Palette = {
   900: "#014D40",
 }
 
-export const CYANS: Palette = {
+export const CYANS: Swatches = {
   50: "#E0FCFF",
   100: "#BEF8FD",
   200: "#87EAF2",
@@ -102,7 +102,7 @@ export const CYANS: Palette = {
   900: "#044E54",
 }
 
-export const LIGHT_BLUES: Palette = {
+export const LIGHT_BLUES: Swatches = {
   50: "#EBF8FF",
   100: "#D1EEFC",
   200: "#A7D8F0",
@@ -115,7 +115,7 @@ export const LIGHT_BLUES: Palette = {
   900: "#0B4F71",
 }
 
-export const BLUES: Palette = {
+export const BLUES: Swatches = {
   50: "#DCEEFB",
   100: "#B6E0FE",
   200: "#84C5F4",
@@ -128,7 +128,7 @@ export const BLUES: Palette = {
   900: "#003E6B",
 }
 
-export const INDIGOES: Palette = {
+export const INDIGOES: Swatches = {
   50: "#E0E8F9",
   100: "#BED0F7",
   200: "#98AEEB",
@@ -141,7 +141,7 @@ export const INDIGOES: Palette = {
   900: "#19216C",
 }
 
-export const PURPLES: Palette = {
+export const PURPLES: Swatches = {
   50: "#EAE2F8",
   100: "#CFBCF2",
   200: "#A081D9",
@@ -154,7 +154,7 @@ export const PURPLES: Palette = {
   900: "#240754",
 }
 
-export const MAGENTAS: Palette = {
+export const MAGENTAS: Swatches = {
   50: "#F5E1F7",
   100: "#ECBDF2",
   200: "#CE80D9",
@@ -167,7 +167,7 @@ export const MAGENTAS: Palette = {
   900: "#4E0754",
 }
 
-export const PINKS: Palette = {
+export const PINKS: Swatches = {
   50: "#FFE0F0",
   100: "#FAB8D9",
   200: "#F191C1",
@@ -180,7 +180,7 @@ export const PINKS: Palette = {
   900: "#5C0B33",
 }
 
-export const GREYS: Palette = {
+export const GREYS: Swatches = {
   50: "#F7F7F7",
   100: "#E1E1E1",
   200: "#CFCFCF",
@@ -193,7 +193,7 @@ export const GREYS: Palette = {
   900: "#222222",
 }
 
-export const BLUE_GREYS: Palette = {
+export const BLUE_GREYS: Swatches = {
   50: "#F0F4F8",
   100: "#D9E2EC",
   200: "#BCCCDC",
@@ -206,7 +206,7 @@ export const BLUE_GREYS: Palette = {
   900: "#102A43",
 }
 
-export const COOL_GREYS: Palette = {
+export const COOL_GREYS: Swatches = {
   50: "#F5F7FA",
   100: "#E4E7EB",
   200: "#CBD2D9",
@@ -219,7 +219,7 @@ export const COOL_GREYS: Palette = {
   900: "#1F2933",
 }
 
-export const WARM_GREYS: Palette = {
+export const WARM_GREYS: Swatches = {
   50: "#FAF9F7",
   100: "#E8E6E1",
   200: "#D3CEC4",
@@ -232,7 +232,7 @@ export const WARM_GREYS: Palette = {
   900: "#27241D",
 }
 
-export const VIVID_REDS: Palette = {
+export const VIVID_REDS: Swatches = {
   50: "#FFE3E3",
   100: "#FFBDBD",
   200: "#FF9B9B",
@@ -245,7 +245,7 @@ export const VIVID_REDS: Palette = {
   900: "#610316",
 }
 
-export const VIVID_ORANGES: Palette = {
+export const VIVID_ORANGES: Swatches = {
   50: "#FFE8D9",
   100: "#FFD0B5",
   200: "#FFB088",
@@ -258,7 +258,7 @@ export const VIVID_ORANGES: Palette = {
   900: "#841003",
 }
 
-export const VIVID_YELLOWS: Palette = {
+export const VIVID_YELLOWS: Swatches = {
   50: "#FFFBEA",
   100: "#FFF3C4",
   200: "#FCE588",
@@ -271,7 +271,7 @@ export const VIVID_YELLOWS: Palette = {
   900: "#8D2B0B",
 }
 
-export const VIVID_LIME_GREENS: Palette = {
+export const VIVID_LIME_GREENS: Swatches = {
   50: "#F8FFED",
   100: "#E6FFBF",
   200: "#CAFF84",
@@ -284,7 +284,7 @@ export const VIVID_LIME_GREENS: Palette = {
   900: "#1E5303",
 }
 
-export const VIVID_GREENS: Palette = {
+export const VIVID_GREENS: Swatches = {
   50: "#E3F9E5",
   100: "#C1F2C7",
   200: "#91E697",
@@ -297,7 +297,7 @@ export const VIVID_GREENS: Palette = {
   900: "#014807",
 }
 
-export const VIVID_TEALS: Palette = {
+export const VIVID_TEALS: Swatches = {
   50: "#F0FCF9",
   100: "#C6F7E9",
   200: "#8EEDD1",
@@ -310,7 +310,7 @@ export const VIVID_TEALS: Palette = {
   900: "#004440",
 }
 
-export const VIVID_CYANS: Palette = {
+export const VIVID_CYANS: Swatches = {
   50: "#E1FCF8",
   100: "#C1FEF6",
   200: "#92FDF2",
@@ -323,7 +323,7 @@ export const VIVID_CYANS: Palette = {
   900: "#05606E",
 }
 
-export const VIVID_LIGHT_BLUES: Palette = {
+export const VIVID_LIGHT_BLUES: Swatches = {
   50: "#E3F8FF",
   100: "#B3ECFF",
   200: "#81DEFD",
@@ -336,7 +336,7 @@ export const VIVID_LIGHT_BLUES: Palette = {
   900: "#035388",
 }
 
-export const VIVID_BLUES: Palette = {
+export const VIVID_BLUES: Swatches = {
   50: "#E6F6FF",
   100: "#BAE3FF",
   200: "#7CC4FA",
@@ -349,7 +349,7 @@ export const VIVID_BLUES: Palette = {
   900: "#002159",
 }
 
-export const VIVID_INDIGOES: Palette = {
+export const VIVID_INDIGOES: Swatches = {
   50: "#D9E8FF",
   100: "#B0D0FF",
   200: "#88B1FC",
@@ -362,7 +362,7 @@ export const VIVID_INDIGOES: Palette = {
   900: "#061178",
 }
 
-export const VIVID_PURPLES: Palette = {
+export const VIVID_PURPLES: Swatches = {
   50: "#F2EBFE",
   100: "#DAC4FF",
   200: "#B990FF",
@@ -375,7 +375,7 @@ export const VIVID_PURPLES: Palette = {
   900: "#44056E",
 }
 
-export const VIVID_MAGENTAS: Palette = {
+export const VIVID_MAGENTAS: Swatches = {
   50: "#FDEBFF",
   100: "#F8C4FE",
   200: "#F48FFF",
@@ -388,7 +388,7 @@ export const VIVID_MAGENTAS: Palette = {
   900: "#6E0560",
 }
 
-export const VIVID_PINK: Palette = {
+export const VIVID_PINK: Swatches = {
   50: "#FFE3EC",
   100: "#FFB8D2",
   200: "#FF8CBA",
